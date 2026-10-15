@@ -3,46 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="藍天咖啡 Blue Sky Coffee - 專為手沖咖啡愛好者打造的頂級單品咖啡豆品牌。精選莊園級微批次高階咖啡豆，讓每一杯手沖都純淨透澈。">
-  <title>藍天咖啡 Blue Sky Coffee ｜ 高階手沖精品咖啡豆專門</title>
+  <title>阿寶紅茶 A-Bao Black Tea ｜ 專注純粹・手搖職人好茶</title>
+  <meta name="description" content="阿寶紅茶專為手搖茶飲愛好者打造，嚴選台灣原葉手採紅茶，搭配純淨天然食材與極簡白色美學，讓您品嚐每一口回甘好茶。">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;900&display=swap" rel="stylesheet">
 
   <style>
-    /* ==========================================================================
-       CSS Variables & Base Reset
-       ========================================================================== */
+    /* --------------------------------------------------
+       CSS Variables & Reset (以純淨白色為品牌主色調)
+    -------------------------------------------------- */
     :root {
-      --primary-navy: #091a2e;      /* 深海深藍 - 沉穩高端背景 */
-      --primary-blue: #0f3d69;      /* 品牌經典藍 */
-      --sky-blue: #38bdf8;          /* 晴空亮天藍 - 強調與亮點 */
-      --sky-light: #e0f2fe;         /* 輕盈天藍霧色 */
-      --accent-gold: #f59e0b;       /* 咖啡烘焙琥珀金 */
-      --accent-gold-hover: #d97706; /* 深琥珀金 */
+      --brand-white: #ffffff;
+      --brand-cream: #faf9f6;
+      --brand-gray-light: #f3f4f6;
+      --brand-gray-border: #e5e7eb;
+      --brand-gray-text: #4b5563;
+      --brand-dark: #1f2937;
+      --brand-black: #111827;
       
-      --bg-white: #ffffff;
-      --bg-light: #f8fafc;
-      --bg-surface: #f1f5f9;
-      --border-color: #e2e8f0;
+      /* 紅茶茶香琥珀與金黃點綴色 */
+      --tea-amber: #b45309;
+      --tea-amber-dark: #92400e;
+      --tea-amber-light: #fef3c7;
+      --tea-warm: #78350f;
+      --tea-gold: #d97706;
+      --success: #10b981;
       
-      --text-dark: #0f172a;         /* 深色文字 */
-      --text-muted: #64748b;        /* 次要文字 */
-      --text-light: #f8fafc;        /* 淺色文字 */
+      --font-sans: 'Noto Sans TC', sans-serif;
+      --font-serif: 'Noto Serif TC', serif;
       
-      --font-serif: "Noto Serif TC", serif;
-      --font-sans: "Noto Sans TC", sans-serif;
-      --font-display: "Cinzel", serif;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.04);
+      --shadow-lg: 0 15px 35px -5px rgba(0, 0, 0, 0.08), 0 5px 15px -5px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 20px 30px -10px rgba(180, 83, 9, 0.15);
       
-      --shadow-sm: 0 2px 8px rgba(9, 26, 46, 0.06);
-      --shadow-md: 0 10px 30px rgba(9, 26, 46, 0.08);
-      --shadow-lg: 0 20px 45px rgba(9, 26, 46, 0.14);
-      --radius-sm: 6px;
-      --radius-md: 12px;
-      --radius-lg: 20px;
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      
+      --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     *, *::before, *::after {
@@ -53,220 +56,154 @@
 
     html {
       scroll-behavior: smooth;
-      font-size: 16px;
     }
 
     body {
       font-family: var(--font-sans);
-      color: var(--text-dark);
-      background-color: var(--bg-light);
-      line-height: 1.7;
+      background-color: var(--brand-white);
+      color: var(--brand-dark);
+      line-height: 1.65;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
 
     a {
-      color: inherit;
       text-decoration: none;
-      transition: var(--transition);
+      color: inherit;
     }
 
     button {
       font-family: inherit;
-      border: none;
       cursor: pointer;
+      border: none;
       outline: none;
       transition: var(--transition);
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
     .container {
-      width: min(1200px, calc(100% - 48px));
+      width: min(1200px, 92%);
       margin: 0 auto;
     }
 
-    .section {
-      padding: 100px 0;
-    }
-
-    /* Headings & Texts */
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-family: var(--font-display);
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      color: var(--sky-blue);
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 24px;
-      height: 2px;
-      background-color: var(--sky-blue);
-    }
-
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 3.8vw, 2.85rem);
-      font-weight: 700;
-      color: var(--primary-navy);
-      line-height: 1.35;
-      margin-bottom: 20px;
-      letter-spacing: 0.02em;
-    }
-
-    .section-desc {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      max-width: 620px;
-      line-height: 1.8;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
+    /* --------------------------------------------------
+       頂部公告欄 (吸引客戶消費促銷資訊)
+    -------------------------------------------------- */
+    .top-banner {
+      background: linear-gradient(90deg, #b45309, #d97706, #b45309);
+      color: #ffffff;
+      padding: 9px 16px;
+      font-size: 0.88rem;
+      text-align: center;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+      display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 14px 28px;
-      border-radius: var(--radius-sm);
-      font-size: 0.95rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      box-shadow: var(--shadow-sm);
+      gap: 12px;
     }
 
-    .btn-gold {
-      background-color: var(--accent-gold);
-      color: var(--primary-navy);
+    .top-banner .badge {
+      background-color: #ffffff;
+      color: var(--tea-amber-dark);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
     }
-    .btn-gold:hover {
-      background-color: var(--accent-gold-hover);
+
+    .top-banner a {
+      text-decoration: underline;
       color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.35);
+      font-weight: 600;
+      cursor: pointer;
     }
 
-    .btn-blue {
-      background-color: var(--primary-blue);
-      color: #ffffff;
-    }
-    .btn-blue:hover {
-      background-color: #0b2d4f;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(15, 61, 105, 0.3);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1.5px solid rgba(255, 255, 255, 0.6);
-      color: #ffffff;
-    }
-    .btn-outline:hover {
-      background-color: rgba(255, 255, 255, 0.12);
-      border-color: #ffffff;
-      transform: translateY(-2px);
-    }
-
-    /* ==========================================================================
-       Header & Navbar
-       ========================================================================== */
-    .site-header {
-      position: fixed;
+    /* --------------------------------------------------
+       導覽列 Navigation Bar
+    -------------------------------------------------- */
+    .navbar {
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(9, 26, 46, 0.88);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--brand-gray-border);
       transition: var(--transition);
     }
 
-    .navbar {
+    .nav-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 80px;
+      height: 76px;
     }
 
     .brand-logo {
       display: flex;
       align-items: center;
-      gap: 14px;
-      color: #fff;
+      gap: 12px;
     }
 
-    .brand-icon {
-      width: 42px;
-      height: 42px;
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: #ffffff;
+      border: 2px solid var(--brand-dark);
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--sky-blue), var(--primary-blue));
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 15px rgba(56, 189, 248, 0.35);
-    }
-
-    .brand-text h1 {
       font-family: var(--font-serif);
-      font-size: 1.25rem;
-      letter-spacing: 0.12em;
-      margin: 0;
-      line-height: 1.1;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--tea-amber-dark);
+      box-shadow: var(--shadow-sm);
     }
 
-    .brand-text span {
-      font-family: var(--font-display);
-      font-size: 0.68rem;
-      letter-spacing: 0.22em;
-      color: var(--sky-blue);
-      display: block;
-      margin-top: 3px;
+    .logo-text h1 {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--brand-black);
+      line-height: 1.2;
     }
 
-    .nav-menu {
+    .logo-text span {
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      color: var(--brand-gray-text);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-links {
       display: flex;
       align-items: center;
-      list-style: none;
       gap: 32px;
+      list-style: none;
     }
 
-    .nav-link {
-      color: rgba(255, 255, 255, 0.82);
+    .nav-links a {
       font-size: 0.95rem;
       font-weight: 500;
+      color: var(--brand-dark);
       position: relative;
       padding: 6px 0;
     }
 
-    .nav-link::after {
-      content: "";
+    .nav-links a::after {
+      content: '';
       position: absolute;
       bottom: 0;
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--sky-blue);
-      transition: width 0.3s ease;
+      background-color: var(--tea-amber);
+      transition: var(--transition);
     }
 
-    .nav-link:hover {
-      color: #ffffff;
-    }
-
-    .nav-link:hover::after {
+    .nav-links a:hover::after {
       width: 100%;
     }
 
@@ -278,781 +215,774 @@
 
     .cart-btn {
       position: relative;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #fff;
-      padding: 10px 16px;
-      border-radius: var(--radius-sm);
+      background: #ffffff;
+      border: 1px solid var(--brand-gray-border);
+      padding: 10px 18px;
+      border-radius: var(--radius-full);
       display: flex;
       align-items: center;
       gap: 8px;
       font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--brand-black);
+      transition: var(--transition);
     }
 
     .cart-btn:hover {
-      background: rgba(255, 255, 255, 0.18);
+      border-color: var(--tea-amber);
+      background-color: var(--brand-cream);
     }
 
     .cart-badge {
-      background: var(--accent-gold);
-      color: var(--primary-navy);
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 2px 7px;
-      border-radius: 10px;
-    }
-
-    .mobile-toggle {
-      display: none;
-      background: transparent;
+      background-color: var(--tea-amber);
       color: #fff;
-      font-size: 1.6rem;
-      padding: 6px;
+      font-size: 0.75rem;
+      padding: 1px 7px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
     }
 
-    /* ==========================================================================
-       Hero Section
-       ========================================================================== */
-    .hero {
-      position: relative;
-      background: radial-gradient(circle at 85% 20%, rgba(56, 189, 248, 0.15), transparent 45%),
-                  linear-gradient(135deg, #061525 0%, var(--primary-navy) 60%, #0c2b4c 100%);
+    .btn-primary {
+      background-color: var(--brand-black);
       color: #ffffff;
-      padding-top: 170px;
-      padding-bottom: 120px;
-      overflow: hidden;
+      padding: 11px 24px;
+      border-radius: var(--radius-full);
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
     }
 
-    .hero-glow {
-      position: absolute;
-      top: -150px;
-      right: -100px;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
-      filter: blur(80px);
-      pointer-events: none;
+    .btn-primary:hover {
+      background-color: var(--tea-amber-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(180, 83, 9, 0.25);
+    }
+
+    /* --------------------------------------------------
+       Hero 核心主視覺 (純白極簡與香醇茶湯)
+    -------------------------------------------------- */
+    .hero-section {
+      background: linear-gradient(180deg, #ffffff 0%, #faf9f6 100%);
+      padding: 70px 0 90px;
+      position: relative;
+      overflow: hidden;
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 60px;
       align-items: center;
+      gap: 48px;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 2;
+      max-width: 620px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      border: 1px solid var(--brand-gray-border);
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--tea-amber-dark);
+      margin-bottom: 22px;
+      box-shadow: var(--shadow-sm);
     }
 
     .hero-title {
       font-family: var(--font-serif);
-      font-size: clamp(2.5rem, 4.5vw, 3.8rem);
-      font-weight: 900;
+      font-size: 3.2rem;
       line-height: 1.25;
-      letter-spacing: 0.04em;
-      margin-bottom: 24px;
+      color: var(--brand-black);
+      font-weight: 900;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
     }
 
-    .hero-title span.highlight {
-      color: var(--sky-blue);
+    .hero-title span {
+      color: var(--tea-amber);
       position: relative;
+      display: inline-block;
     }
 
-    .hero-subtitle {
-      font-size: 1.15rem;
-      color: rgba(255, 255, 255, 0.85);
-      line-height: 1.85;
-      margin-bottom: 36px;
-      max-width: 540px;
+    .hero-desc {
+      font-size: 1.12rem;
+      color: var(--brand-gray-text);
+      margin-bottom: 32px;
+      line-height: 1.8;
     }
 
-    .hero-cta-group {
+    .hero-buttons {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       gap: 16px;
-      margin-bottom: 48px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: var(--brand-black);
+      border: 1px solid var(--brand-gray-border);
+      padding: 11px 24px;
+      border-radius: var(--radius-full);
+      font-size: 0.92rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--tea-amber);
+      background: var(--brand-cream);
+      color: var(--tea-amber);
     }
 
     .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
-      padding-top: 32px;
+      display: flex;
+      gap: 36px;
+      padding-top: 24px;
+      border-top: 1px solid var(--brand-gray-border);
     }
 
     .stat-item h3 {
-      font-family: var(--font-display);
-      font-size: 1.75rem;
-      color: var(--sky-blue);
-      margin-bottom: 4px;
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--brand-black);
+      line-height: 1;
+      margin-bottom: 6px;
     }
 
     .stat-item p {
       font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.7);
+      color: var(--brand-gray-text);
     }
 
-    /* Hero Visual Card */
+    /* Hero 圖形視覺區 */
     .hero-visual {
       position: relative;
-      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .hero-glass-card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+    .hero-card-stack {
+      width: 100%;
+      max-width: 440px;
+      background: #ffffff;
       border-radius: var(--radius-lg);
-      padding: 40px;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+      border: 1px solid var(--brand-gray-border);
+      box-shadow: var(--shadow-lg);
+      padding: 32px 28px;
       position: relative;
-      text-align: center;
     }
 
-    .dripper-svg {
-      width: 220px;
-      height: 220px;
-      margin: 0 auto 20px;
-      filter: drop-shadow(0 15px 25px rgba(56, 189, 248, 0.25));
-      animation: float 4s ease-in-out infinite;
+    .cup-illustration {
+      width: 100%;
+      height: 310px;
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 40%, #fafaf9 100%);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #fde68a;
     }
 
-    @keyframes float {
+    .cup-svg {
+      width: 170px;
+      height: 230px;
+      filter: drop-shadow(0 12px 20px rgba(180, 83, 9, 0.2));
+      animation: floatCup 4s ease-in-out infinite;
+    }
+
+    @keyframes floatCup {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-8px); }
     }
 
-    .badge-float {
+    .floating-card-tag {
       position: absolute;
-      top: 25px;
-      right: -15px;
-      background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-hover));
-      color: var(--primary-navy);
-      font-weight: 700;
-      font-size: 0.8rem;
-      padding: 8px 16px;
-      border-radius: 30px;
-      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.4);
-      letter-spacing: 0.05em;
-    }
-
-    .dripper-status {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 6px;
-    }
-
-    .dripper-sub {
-      font-size: 0.85rem;
-      color: var(--sky-blue);
-      letter-spacing: 0.1em;
-    }
-
-    /* ==========================================================================
-       Brand Pillars (品牌風格: 高階咖啡豆)
-       ========================================================================== */
-    .pillars-section {
-      background-color: var(--bg-white);
-    }
-
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 60px;
-    }
-
-    .pillar-card {
-      background: var(--bg-light);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 40px 32px;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pillar-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary-blue), var(--sky-blue));
-      opacity: 0;
-      transition: var(--transition);
-    }
-
-    .pillar-card:hover {
-      transform: translateY(-8px);
+      background: #ffffff;
+      border: 1px solid var(--brand-gray-border);
       box-shadow: var(--shadow-md);
-      border-color: #cbd5e1;
+      padding: 10px 16px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 2;
     }
 
-    .pillar-card:hover::before {
-      opacity: 1;
+    .tag-top-right {
+      top: 15px;
+      right: -20px;
     }
 
-    .pillar-icon {
-      width: 60px;
-      height: 60px;
-      border-radius: var(--radius-sm);
-      background: var(--sky-light);
-      color: var(--primary-blue);
+    .tag-bottom-left {
+      bottom: 20px;
+      left: -20px;
+    }
+
+    .tag-badge-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--tea-amber-light);
+      color: var(--tea-amber);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.8rem;
-      margin-bottom: 24px;
+      font-size: 1.1rem;
     }
 
-    .pillar-title {
+    .tag-text strong {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--brand-black);
+    }
+
+    .tag-text small {
+      font-size: 0.75rem;
+      color: var(--brand-gray-text);
+    }
+
+    /* --------------------------------------------------
+       促銷刺激區塊 Promo Banner (吸引消費)
+    -------------------------------------------------- */
+    .promo-highlight-section {
+      padding: 40px 0;
+      background: #ffffff;
+    }
+
+    .promo-box {
+      background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .promo-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .promo-left h2 {
       font-family: var(--font-serif);
-      font-size: 1.35rem;
-      color: var(--primary-navy);
+      font-size: 2rem;
+      margin-bottom: 8px;
+      color: #ffffff;
+    }
+
+    .promo-left p {
+      color: #d1d5db;
+      font-size: 1rem;
+      max-width: 580px;
+    }
+
+    .promo-coupon-code {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px dashed #d97706;
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      margin-top: 12px;
+      font-family: monospace;
+      font-size: 0.95rem;
+      color: #fde68a;
+    }
+
+    .promo-right {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: #ffffff;
+      font-weight: 700;
+      padding: 13px 28px;
+      border-radius: var(--radius-full);
+      font-size: 1rem;
+      box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(217, 119, 6, 0.6);
+    }
+
+    /* --------------------------------------------------
+       品牌故事與四大堅持 (Brand Values)
+    -------------------------------------------------- */
+    .section-spacing {
+      padding: 90px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 56px;
+    }
+
+    .section-eyebrow {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: var(--tea-amber);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 2.3rem;
+      font-weight: 800;
+      color: var(--brand-black);
+      line-height: 1.3;
       margin-bottom: 14px;
     }
 
-    .pillar-desc {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.75;
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--brand-gray-text);
+      line-height: 1.7;
     }
 
-    /* ==========================================================================
-       Coffee Menu Showcase (功能: 吸引客戶消費咖啡)
-       ========================================================================== */
-    .menu-section {
-      background-color: var(--bg-light);
-    }
-
-    .menu-header-wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex-wrap: wrap;
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 24px;
+    }
+
+    .value-card {
+      background: #ffffff;
+      border: 1px solid var(--brand-gray-border);
+      border-radius: var(--radius-md);
+      padding: 32px 24px;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .value-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--tea-amber);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .value-icon-wrapper {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: var(--brand-cream);
+      border: 1px solid #fde68a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--tea-amber);
+      transition: var(--transition);
+    }
+
+    .value-card:hover .value-icon-wrapper {
+      background: var(--tea-amber);
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    .value-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: var(--brand-black);
+    }
+
+    .value-card p {
+      font-size: 0.9rem;
+      color: var(--brand-gray-text);
+      line-height: 1.6;
+    }
+
+    /* --------------------------------------------------
+       熱門手搖飲品菜單 Menu & Filter
+    -------------------------------------------------- */
+    .menu-section {
+      background-color: var(--brand-cream);
+      padding: 90px 0;
+    }
+
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
       margin-bottom: 40px;
     }
 
-    /* Filter Tabs */
-    .filter-tabs {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
+    .tab-btn {
+      background: #ffffff;
+      border: 1px solid var(--brand-gray-border);
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--brand-dark);
+      transition: var(--transition);
     }
 
-    .filter-btn {
-      padding: 9px 20px;
-      border-radius: 30px;
-      background: var(--bg-white);
-      border: 1px solid var(--border-color);
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .filter-btn.active, .filter-btn:hover {
-      background: var(--primary-blue);
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--brand-black);
       color: #ffffff;
-      border-color: var(--primary-blue);
+      border-color: var(--brand-black);
     }
 
-    .beans-grid {
+    .menu-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 28px;
     }
 
-    .bean-card {
-      background: var(--bg-white);
-      border: 1px solid var(--border-color);
+    .drink-card {
+      background: #ffffff;
       border-radius: var(--radius-md);
+      border: 1px solid var(--brand-gray-border);
       overflow: hidden;
       display: flex;
       flex-direction: column;
       transition: var(--transition);
       box-shadow: var(--shadow-sm);
+    }
+
+    .drink-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+      border-color: #fde68a;
+    }
+
+    .drink-image-box {
+      height: 200px;
+      background: linear-gradient(180deg, #fefce8 0%, #fef3c7 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
     }
 
-    .bean-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-      border-color: #93c5fd;
+    .drink-svg {
+      width: 90px;
+      height: 140px;
+      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.08));
     }
 
-    .bean-tag {
+    .drink-badge {
       position: absolute;
-      top: 16px;
-      right: 16px;
-      background: var(--sky-light);
-      color: var(--primary-blue);
+      top: 14px;
+      left: 14px;
+      background: #ffffff;
+      border: 1px solid var(--brand-gray-border);
       font-size: 0.75rem;
       font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 20px;
-      letter-spacing: 0.05em;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      color: var(--tea-amber-dark);
+      box-shadow: var(--shadow-sm);
     }
 
-    .bean-visual-box {
-      background: radial-gradient(circle at center, #f0f7ff, #e2e8f0);
-      padding: 36px 20px 24px;
-      text-align: center;
-      border-bottom: 1px solid var(--border-color);
+    .drink-sweet-level {
+      position: absolute;
+      bottom: 12px;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.9);
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      color: var(--brand-gray-text);
+      font-weight: 500;
     }
 
-    .bean-avatar-svg {
-      width: 90px;
-      height: 90px;
-      margin: 0 auto;
-      transition: var(--transition);
-    }
-
-    .bean-card:hover .bean-avatar-svg {
-      transform: scale(1.08) rotate(-4deg);
-    }
-
-    .bean-body {
-      padding: 24px;
+    .drink-info {
+      padding: 22px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
 
-    .bean-origin {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--sky-blue);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 6px;
-    }
-
-    .bean-name {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--primary-navy);
-      margin-bottom: 10px;
-      line-height: 1.4;
-    }
-
-    .bean-notes {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      margin-bottom: 18px;
+    .drink-header {
       display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .note-pill {
-      background: var(--bg-surface);
-      color: #334155;
-      padding: 3px 8px;
-      border-radius: 4px;
-      font-size: 0.78rem;
-    }
-
-    .bean-roast {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      padding-bottom: 16px;
-      border-bottom: 1px dashed var(--border-color);
-    }
-
-    .roast-meter {
-      display: flex;
-      gap: 4px;
-    }
-
-    .roast-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: #cbd5e1;
-    }
-
-    .roast-dot.active {
-      background: var(--accent-gold);
-    }
-
-    .bean-footer {
-      margin-top: auto;
-      display: flex;
-      align-items: center;
       justify-content: space-between;
-    }
-
-    .bean-price {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--primary-navy);
-    }
-
-    .bean-price small {
-      font-size: 0.75rem;
-      font-weight: 400;
-      color: var(--text-muted);
-      margin-left: 2px;
-    }
-
-    .add-cart-btn {
-      background: var(--primary-blue);
-      color: #fff;
-      padding: 8px 14px;
-      border-radius: var(--radius-sm);
-      font-size: 0.85rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .add-cart-btn:hover {
-      background: var(--accent-gold);
-      color: var(--primary-navy);
-    }
-
-    /* ==========================================================================
-       Pour-Over Guide (用途: 推廣手沖咖啡)
-       ========================================================================== */
-    .brew-section {
-      background: var(--primary-navy);
-      color: #ffffff;
-      position: relative;
-    }
-
-    .brew-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-
-    .brew-steps-list {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      margin-top: 36px;
-    }
-
-    .brew-step-item {
-      display: flex;
-      gap: 20px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 24px;
-      border-radius: var(--radius-md);
-      transition: var(--transition);
-    }
-
-    .brew-step-item:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: var(--sky-blue);
-      transform: translateX(6px);
-    }
-
-    .step-badge {
-      width: 44px;
-      height: 44px;
-      flex-shrink: 0;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--sky-blue), var(--primary-blue));
-      color: #ffffff;
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
-    }
-
-    .step-content h4 {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      margin-bottom: 6px;
-      color: #ffffff;
-    }
-
-    .step-content p {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.72);
-      line-height: 1.65;
-    }
-
-    /* Ratio Calculator Card */
-    .calc-card {
-      background: #0d233a;
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      border-radius: var(--radius-lg);
-      padding: 44px 36px;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
-      position: relative;
-    }
-
-    .calc-card-title {
-      font-family: var(--font-serif);
-      font-size: 1.45rem;
-      color: #ffffff;
+      align-items: flex-start;
       margin-bottom: 8px;
     }
 
-    .calc-card-subtitle {
-      font-size: 0.88rem;
-      color: var(--sky-blue);
-      margin-bottom: 30px;
+    .drink-name {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--brand-black);
     }
 
-    .calc-field {
-      margin-bottom: 24px;
+    .drink-price {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--tea-amber-dark);
     }
 
-    .calc-label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.85);
+    .drink-en {
+      font-size: 0.78rem;
+      color: #9ca3af;
       margin-bottom: 10px;
     }
 
-    .calc-slider {
-      width: 100%;
-      height: 6px;
-      border-radius: 3px;
-      background: #1e3a5f;
-      outline: none;
-      -webkit-appearance: none;
+    .drink-desc {
+      font-size: 0.88rem;
+      color: var(--brand-gray-text);
+      line-height: 1.55;
+      margin-bottom: 18px;
+      flex-grow: 1;
     }
 
-    .calc-slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: var(--sky-blue);
-      cursor: pointer;
-      box-shadow: 0 0 10px var(--sky-blue);
-    }
-
-    .ratio-options {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .ratio-btn {
-      padding: 10px 8px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #ffffff;
+    .drink-order-btn {
+      background: #ffffff;
+      border: 1px solid var(--brand-black);
+      color: var(--brand-black);
+      font-weight: 600;
+      font-size: 0.88rem;
+      padding: 10px;
       border-radius: var(--radius-sm);
-      font-size: 0.85rem;
-      text-align: center;
-    }
-
-    .ratio-btn.active, .ratio-btn:hover {
-      background: var(--sky-blue);
-      color: var(--primary-navy);
-      font-weight: 700;
-      border-color: var(--sky-blue);
-    }
-
-    .calc-results {
-      background: rgba(0, 0, 0, 0.25);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      margin-top: 28px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .result-box h5 {
-      font-size: 0.78rem;
-      color: rgba(255, 255, 255, 0.6);
-      margin-bottom: 4px;
-      letter-spacing: 0.05em;
-    }
-
-    .result-box p {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--accent-gold);
-    }
-
-    /* ==========================================================================
-       Customer Reviews (目標受眾: 咖啡愛好者)
-       ========================================================================== */
-    .reviews-section {
-      background-color: var(--bg-white);
-    }
-
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 60px;
-    }
-
-    .review-card {
-      background: var(--bg-light);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 36px 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: var(--transition);
-    }
-
-    .review-card:hover {
-      box-shadow: var(--shadow-md);
-      border-color: #cbd5e1;
-    }
-
-    .review-stars {
-      color: var(--accent-gold);
-      font-size: 1.1rem;
-      margin-bottom: 16px;
-    }
-
-    .review-text {
-      font-size: 0.96rem;
-      color: var(--text-dark);
-      line-height: 1.8;
-      margin-bottom: 24px;
-      font-style: italic;
-    }
-
-    .reviewer-info {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      border-top: 1px solid var(--border-color);
-      padding-top: 18px;
-    }
-
-    .reviewer-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--primary-blue);
-      color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      font-size: 0.9rem;
+      gap: 8px;
+      transition: var(--transition);
     }
 
-    .reviewer-name {
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--primary-navy);
-    }
-
-    .reviewer-role {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    /* ==========================================================================
-       CTA / VIP Subscription Section
-       ========================================================================== */
-    .cta-section {
-      background: linear-gradient(135deg, #07192d 0%, var(--primary-blue) 100%);
-      color: #ffffff;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-box {
-      max-width: 720px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .cta-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 3.5vw, 2.7rem);
-      margin-bottom: 18px;
+    .drink-order-btn:hover {
+      background: var(--brand-black);
       color: #ffffff;
     }
 
-    .cta-desc {
-      font-size: 1.08rem;
-      color: rgba(255, 255, 255, 0.85);
-      margin-bottom: 36px;
-      line-height: 1.8;
+    /* --------------------------------------------------
+       手搖調飲互動訂製視窗 (Modal Customizer)
+    -------------------------------------------------- */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(17, 24, 39, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
     }
 
-    .subscribe-form {
+    .modal-overlay.active {
       display: flex;
-      max-width: 520px;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: var(--radius-sm);
-      padding: 6px;
-      backdrop-filter: blur(10px);
     }
 
-    .subscribe-input {
-      flex: 1;
+    .modal-container {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      width: min(540px, 100%);
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      position: relative;
+      animation: modalFadeIn 0.2s ease-out;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-header {
+      padding: 24px 28px;
+      border-bottom: 1px solid var(--brand-gray-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 10;
+    }
+
+    .modal-header h3 {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--brand-black);
+    }
+
+    .close-modal-btn {
       background: transparent;
-      border: none;
-      padding: 12px 18px;
-      color: #ffffff;
+      font-size: 1.4rem;
+      color: #9ca3af;
+      padding: 4px;
+      line-height: 1;
+    }
+
+    .close-modal-btn:hover {
+      color: var(--brand-black);
+    }
+
+    .modal-body {
+      padding: 28px;
+    }
+
+    .custom-group {
+      margin-bottom: 24px;
+    }
+
+    .custom-label {
       font-size: 0.95rem;
-      outline: none;
-    }
-
-    .subscribe-input::placeholder {
-      color: rgba(255, 255, 255, 0.55);
-    }
-
-    .subscribe-btn {
-      background: var(--accent-gold);
-      color: var(--primary-navy);
       font-weight: 700;
-      padding: 12px 24px;
-      border-radius: 4px;
-      white-space: nowrap;
+      color: var(--brand-black);
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
     }
 
-    .subscribe-btn:hover {
-      background: #fbbf24;
+    .custom-label small {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      font-weight: normal;
     }
 
-    /* ==========================================================================
-       Cart Drawer (側欄購物車)
-       ========================================================================== */
+    .option-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 8px;
+    }
+
+    .option-radio {
+      display: none;
+    }
+
+    .option-pill {
+      border: 1px solid var(--brand-gray-border);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-size: 0.85rem;
+      text-align: center;
+      cursor: pointer;
+      font-weight: 500;
+      color: var(--brand-dark);
+      transition: var(--transition);
+      background: #ffffff;
+      user-select: none;
+    }
+
+    .option-pill:hover {
+      border-color: var(--tea-amber);
+    }
+
+    .option-radio:checked + .option-pill {
+      border-color: var(--tea-amber);
+      background: var(--tea-amber-light);
+      color: var(--tea-amber-dark);
+      font-weight: 700;
+    }
+
+    /* 複選加料 */
+    .topping-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid var(--brand-gray-border);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .topping-item.selected {
+      border-color: var(--tea-amber);
+      background: var(--tea-amber-light);
+    }
+
+    .topping-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .topping-price {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--tea-amber-dark);
+    }
+
+    .modal-footer {
+      padding: 20px 28px;
+      border-top: 1px solid var(--brand-gray-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #faf9f6;
+      position: sticky;
+      bottom: 0;
+    }
+
+    .modal-total-price {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--tea-amber-dark);
+    }
+
+    /* --------------------------------------------------
+       側邊購物車抽屜 (Cart Drawer)
+    -------------------------------------------------- */
     .cart-drawer-overlay {
       position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(4px);
-      z-index: 2000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(17, 24, 39, 0.5);
+      z-index: 1100;
       opacity: 0;
       visibility: hidden;
       transition: var(--transition);
@@ -1070,12 +1000,12 @@
       width: min(420px, 100%);
       height: 100%;
       background: #ffffff;
-      z-index: 2001;
-      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
+      z-index: 1200;
       transform: translateX(100%);
-      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       flex-direction: column;
+      box-shadow: -10px 0 30px rgba(0,0,0,0.15);
     }
 
     .cart-drawer.active {
@@ -1083,780 +1013,829 @@
     }
 
     .cart-drawer-header {
-      padding: 24px;
-      border-bottom: 1px solid var(--border-color);
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--brand-gray-border);
       display: flex;
       align-items: center;
       justify-content: space-between;
-    }
-
-    .cart-drawer-header h3 {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      color: var(--primary-navy);
-    }
-
-    .close-drawer-btn {
-      background: transparent;
-      font-size: 1.5rem;
-      color: var(--text-muted);
-      line-height: 1;
     }
 
     .cart-drawer-items {
-      padding: 24px;
       flex: 1;
       overflow-y: auto;
+      padding: 20px 24px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 16px;
     }
 
-    .cart-item {
+    .cart-empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: #9ca3af;
+    }
+
+    .cart-empty-icon {
+      font-size: 3rem;
+      margin-bottom: 12px;
+    }
+
+    .cart-item-card {
+      border: 1px solid var(--brand-gray-border);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      background: #fafafa;
+    }
+
+    .cart-item-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      color: var(--brand-black);
+    }
+
+    .cart-item-details {
+      font-size: 0.8rem;
+      color: var(--brand-gray-text);
+      line-height: 1.4;
+    }
+
+    .cart-item-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .qty-controls {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border-color);
+      gap: 8px;
     }
 
-    .cart-item-info h4 {
-      font-size: 0.95rem;
-      color: var(--primary-navy);
-      margin-bottom: 4px;
-    }
-
-    .cart-item-info p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
+    .qty-btn {
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      background: #ffffff;
+      border: 1px solid var(--brand-gray-border);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .cart-item-price {
-      font-family: var(--font-display);
       font-weight: 700;
-      color: var(--primary-blue);
+      color: var(--tea-amber-dark);
     }
 
     .cart-drawer-footer {
-      padding: 24px;
-      border-top: 1px solid var(--border-color);
-      background: var(--bg-light);
+      padding: 20px 24px;
+      border-top: 1px solid var(--brand-gray-border);
+      background: #faf9f6;
     }
 
-    .cart-total-row {
+    .cart-summary-row {
       display: flex;
       justify-content: space-between;
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 18px;
-      color: var(--primary-navy);
-    }
-
-    .checkout-btn {
-      width: 100%;
-      padding: 14px;
-      background: var(--primary-blue);
-      color: #fff;
-      border-radius: var(--radius-sm);
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
-    .checkout-btn:hover {
-      background: var(--accent-gold);
-      color: var(--primary-navy);
-    }
-
-    /* Toast Notification */
-    .toast-msg {
-      position: fixed;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%) translateY(100px);
-      background: var(--primary-navy);
-      color: #fff;
-      padding: 14px 28px;
-      border-radius: 40px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-      border: 1px solid var(--sky-blue);
+      margin-bottom: 10px;
       font-size: 0.95rem;
-      z-index: 3000;
-      opacity: 0;
-      pointer-events: none;
-      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .cart-summary-total {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--brand-black);
+      border-top: 1px dashed var(--brand-gray-border);
+      padding-top: 10px;
+      margin-top: 6px;
+    }
+
+    /* --------------------------------------------------
+       趣味手搖刮刮樂 / 幸運轉盤 (增加轉化誘因)
+    -------------------------------------------------- */
+    .interactive-game-section {
+      background: linear-gradient(180deg, #faf9f6 0%, #ffffff 100%);
+      padding: 80px 0;
+    }
+
+    .lottery-card {
+      background: #ffffff;
+      border: 2px dashed #f59e0b;
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+
+    .lottery-badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--tea-amber);
+      color: #ffffff;
+      padding: 4px 18px;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .spin-box {
+      margin: 28px auto;
+      padding: 20px;
+      background: var(--brand-cream);
+      border-radius: var(--radius-md);
+      display: inline-block;
+      min-width: 320px;
+      border: 1px solid var(--brand-gray-border);
+    }
+
+    .spin-result-text {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--tea-amber-dark);
+      font-family: var(--font-serif);
+      min-height: 40px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
     }
 
-    .toast-msg.show {
-      transform: translateX(-50%) translateY(0);
-      opacity: 1;
+    /* --------------------------------------------------
+       顧客推薦與口碑 (Social Proof)
+    -------------------------------------------------- */
+    .reviews-section {
+      padding: 80px 0;
+      background: #ffffff;
     }
 
-    /* ==========================================================================
-       Footer
-       ========================================================================== */
-    .site-footer {
-      background: #051321;
-      color: rgba(255, 255, 255, 0.7);
-      padding: 80px 0 30px;
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .review-card {
+      background: #ffffff;
+      border: 1px solid var(--brand-gray-border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stars {
+      color: #f59e0b;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+
+    .review-text {
+      font-size: 0.94rem;
+      color: var(--brand-gray-text);
+      line-height: 1.65;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .reviewer-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .reviewer-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--tea-amber-light);
+      color: var(--tea-amber-dark);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+    }
+
+    .reviewer-name {
+      font-weight: 700;
+      color: var(--brand-black);
+      font-size: 0.9rem;
+    }
+
+    .reviewer-role {
+      font-size: 0.78rem;
+      color: #9ca3af;
+    }
+
+    /* --------------------------------------------------
+       門市與外送資訊 Store Info
+    -------------------------------------------------- */
+    .store-section {
+      background-color: var(--brand-cream);
+      padding: 80px 0;
+    }
+
+    .store-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .store-details {
+      background: #ffffff;
+      padding: 36px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--brand-gray-border);
+      box-shadow: var(--shadow-md);
+    }
+
+    .store-info-list {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .store-info-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+      color: var(--brand-dark);
+    }
+
+    .store-icon {
+      color: var(--tea-amber);
+      font-size: 1.2rem;
+      line-height: 1.3;
+    }
+
+    /* --------------------------------------------------
+       Footer 頁尾
+    -------------------------------------------------- */
+    .footer {
+      background: #111827;
+      color: #9ca3af;
+      padding: 60px 0 30px;
       font-size: 0.9rem;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
-      gap: 48px;
-      padding-bottom: 60px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 40px;
     }
 
-    .footer-brand p {
-      margin: 18px 0 24px;
-      line-height: 1.8;
-      max-width: 320px;
-    }
-
-    .footer-title {
+    .footer-col h4 {
       color: #ffffff;
+      font-size: 1rem;
+      margin-bottom: 18px;
       font-family: var(--font-serif);
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      position: relative;
     }
 
-    .footer-title::after {
-      content: "";
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 24px;
-      height: 2px;
-      background: var(--sky-blue);
-    }
-
-    .footer-links {
+    .footer-col ul {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
     }
 
-    .footer-links a:hover {
-      color: var(--sky-blue);
-      transform: translateX(4px);
+    .footer-col ul li {
+      margin-bottom: 10px;
     }
 
-    .footer-contact-item {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 12px;
-      line-height: 1.6;
+    .footer-col ul a:hover {
+      color: #ffffff;
     }
 
     .footer-bottom {
-      padding-top: 30px;
+      border-top: 1px solid #1f2937;
+      padding-top: 25px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
       font-size: 0.82rem;
     }
 
-    /* ==========================================================================
-       Responsive Media Queries
-       ========================================================================== */
-    @media (max-width: 1024px) {
-      .beans-grid {
+    /* 提示訊息 Toast Notification */
+    .toast-msg {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--brand-black);
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-lg);
+      font-size: 0.92rem;
+      font-weight: 500;
+      z-index: 2000;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #374151;
+    }
+
+    .toast-msg.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* --------------------------------------------------
+       RWD 手機版適應
+    -------------------------------------------------- */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-content {
+        max-width: 100%;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .hero-stats {
+        justify-content: center;
+      }
+      .values-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      .pillars-grid, .reviews-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .promo-box {
+        flex-direction: column;
+        text-align: center;
+      }
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+      .store-grid {
+        grid-template-columns: 1fr;
       }
       .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .brew-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
+        grid-template-columns: 1fr 1fr;
       }
     }
 
     @media (max-width: 768px) {
-      .section {
-        padding: 70px 0;
+      .nav-links {
+        display: none;
       }
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+      .hero-title {
+        font-size: 2.3rem;
       }
-      .hero-glass-card {
-        padding: 30px 20px;
-      }
-      .mobile-toggle {
-        display: block;
-      }
-      .nav-menu {
-        position: fixed;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background: var(--primary-navy);
-        flex-direction: column;
-        padding: 30px 20px;
-        gap: 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        transform: translateY(-150%);
-        transition: transform 0.3s ease;
-      }
-      .nav-menu.open {
-        transform: translateY(0);
-      }
-      .pillars-grid, .reviews-grid, .beans-grid {
+      .values-grid {
         grid-template-columns: 1fr;
       }
       .footer-grid {
         grid-template-columns: 1fr;
-        gap: 36px;
       }
-      .subscribe-form {
+      .footer-bottom {
         flex-direction: column;
-        background: transparent;
-        border: none;
-      }
-      .subscribe-input {
-        background: rgba(255, 255, 255, 0.12);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: var(--radius-sm);
-        margin-bottom: 10px;
-      }
-      .subscribe-btn {
-        width: 100%;
-        border-radius: var(--radius-sm);
+        gap: 12px;
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- ==========================================================================
-       Header / Navigation Bar
-       ========================================================================== -->
-  <header class="site-header" id="header">
-    <div class="container navbar">
-      <!-- Brand Logo -->
-      <a href="#hero" class="brand-logo" aria-label="藍天咖啡首頁">
-        <div class="brand-icon">
-          <!-- Coffee Cup & Sky Steam SVG -->
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
-            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
-            <line x1="6" y1="1" x2="6" y2="4"></line>
-            <line x1="10" y1="1" x2="10" y2="4"></line>
-            <line x1="14" y1="1" x2="14" y2="4"></line>
-          </svg>
-        </div>
-        <div class="brand-text">
-          <h1>藍天咖啡</h1>
-          <span>BLUE SKY COFFEE</span>
+  <!-- 頂部促銷條 (吸引顧客消費) -->
+  <div class="top-banner">
+    <span class="badge">🔥 本月活動</span>
+    <span>加入阿寶官方 LINE 會員，立即領取「首杯半價優惠券」與集點卡！</span>
+    <a href="#promo">查看優惠 ➔</a>
+  </div>
+
+  <!-- 導覽列 Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-icon">寶</div>
+        <div class="logo-text">
+          <h1>阿寶紅茶</h1>
+          <span>A-BAO BLACK TEA</span>
         </div>
       </a>
 
-      <!-- Desktop Nav Menu -->
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#about" class="nav-link">品牌堅持</a></li>
-        <li><a href="#menu" class="nav-link">本季豆單</a></li>
-        <li><a href="#brew-guide" class="nav-link">手沖萃取</a></li>
-        <li><a href="#calculator" class="nav-link">水粉比計算</a></li>
-        <li><a href="#reviews" class="nav-link">啡友盛讚</a></li>
+      <ul class="nav-links">
+        <li><a href="#story">品牌堅持</a></li>
+        <li><a href="#menu">招牌手搖</a></li>
+        <li><a href="#lottery">好康抽獎</a></li>
+        <li><a href="#reviews">茶客好評</a></li>
+        <li><a href="#store">門市據點</a></li>
       </ul>
 
-      <!-- Action Buttons -->
       <div class="nav-actions">
-        <button class="cart-btn" id="openCartBtn" aria-label="打開購物車">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="9" cy="21" r="1"></circle>
-            <circle cx="20" cy="21" r="1"></circle>
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-          </svg>
-          <span>購物車</span>
-          <span class="cart-badge" id="cartCount">0</span>
+        <button class="cart-btn" onclick="toggleCartDrawer()">
+          <span>🛒 點餐清單</span>
+          <span class="cart-badge" id="cartBadgeCount">0</span>
         </button>
-
-        <button class="mobile-toggle" id="mobileToggle" aria-label="切換導覽選單">
-          ☰
-        </button>
+        <a href="#menu" class="btn-primary">線上點茶</a>
       </div>
     </div>
-  </header>
+  </nav>
 
-  <!-- ==========================================================================
-       Hero Section
-       ========================================================================== -->
-  <section class="hero" id="hero">
-    <div class="hero-glow"></div>
+  <!-- Hero 英雄主視覺區 -->
+  <section class="hero-section">
     <div class="container hero-grid">
-      <!-- Left Content -->
       <div class="hero-content">
-        <div class="eyebrow">ARTISAN HAND DRIP COFFEE</div>
+        <div class="hero-tag">
+          <span>🌿 純白美學 × 原葉淬煉</span>
+        </div>
         <h2 class="hero-title">
-          晴空之下的純淨風味，<br>
-          為<span class="highlight">手沖愛好者</span>而生。
+          一杯甘醇的<span>阿寶紅茶</span>，<br>喚醒生活純粹的溫柔。
         </h2>
-        <p class="hero-subtitle">
-          嚴選全球高海拔莊園微批次高階咖啡豆，堅持小量慢火烘焙。以 92°C 的水溫與時間溫柔對話，讓每一口咖啡都澄澈、明亮、回甘長久。
+        <p class="hero-desc">
+          為每一位手搖飲料愛好者專心沏茶。秉持純白純淨的品牌初衷，嚴選手採高品質原葉紅茶，搭佐小農純鮮奶與手炒琥珀珍珠，重現手搖茶最真實的濃郁茶韻。
         </p>
 
-        <div class="hero-cta-group">
-          <a href="#menu" class="btn btn-gold">
-            <span>探索本季高階豆單</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
+        <div class="hero-buttons">
+          <a href="#menu" class="btn-primary" style="padding: 13px 32px; font-size: 1rem;">
+            🥤 立即挑選飲品
           </a>
-          <a href="#brew-guide" class="btn btn-outline">
-            <span>了解手沖萃取法</span>
+          <a href="#lottery" class="btn-secondary">
+            🎁 抽取今日幸運飲品折價券
           </a>
         </div>
 
-        <!-- Metrics -->
         <div class="hero-stats">
           <div class="stat-item">
-            <h3>SCA 88+</h3>
-            <p>精品杯測卓越評分</p>
+            <h3>100%</h3>
+            <p>嚴選台灣在地原葉茶</p>
           </div>
           <div class="stat-item">
-            <h3>1800m+</h3>
-            <p>高海拔微型莊園豆</p>
+            <h3>4.9 ★</h3>
+            <p>超過萬名茶友滿分推薦</p>
           </div>
           <div class="stat-item">
-            <h3>48 Hours</h3>
-            <p>每週烘焙新鮮直送</p>
+            <h3>0%</h3>
+            <p>堅持無人工茶精與香料</p>
           </div>
         </div>
       </div>
 
-      <!-- Right Visual Card -->
+      <!-- Hero 右側手搖杯示意與特色徽章 -->
       <div class="hero-visual">
-        <div class="hero-glass-card">
-          <div class="badge-float">經典 V60 萃取中</div>
-          
-          <!-- Modern Coffee Dripper SVG -->
-          <svg class="dripper-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Filter Cone -->
-            <path d="M40 50 L160 50 L120 120 L80 120 Z" fill="url(#dripperGrad)" stroke="#38bdf8" stroke-width="3" stroke-linejoin="round"/>
-            <!-- Carafe -->
-            <path d="M75 125 L125 125 L145 180 L55 180 Z" fill="url(#carafeGrad)" stroke="#93c5fd" stroke-width="2.5" stroke-linejoin="round"/>
-            <path d="M62 165 C62 165, 100 162, 138 165 L142 178 L58 178 Z" fill="#f59e0b" opacity="0.85"/>
-            <!-- Steam Rings -->
-            <circle cx="100" cy="30" r="6" stroke="#38bdf8" stroke-width="2" opacity="0.6"/>
-            <circle cx="100" cy="18" r="9" stroke="#38bdf8" stroke-width="1.5" opacity="0.3"/>
-            <!-- Droplet -->
-            <circle cx="100" cy="138" r="4" fill="#38bdf8"/>
-            <defs>
-              <linearGradient id="dripperGrad" x1="40" y1="50" x2="160" y2="120" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#38bdf8" stop-opacity="0.35"/>
-                <stop offset="1" stop-color="#0f3d69" stop-opacity="0.6"/>
-              </linearGradient>
-              <linearGradient id="carafeGrad" x1="55" y1="125" x2="145" y2="180" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#e0f2fe" stop-opacity="0.2"/>
-                <stop offset="1" stop-color="#38bdf8" stop-opacity="0.4"/>
-              </linearGradient>
-            </defs>
-          </svg>
+        <div class="hero-card-stack">
+          <!-- 懸浮徽章 1 -->
+          <div class="floating-card-tag tag-top-right">
+            <div class="tag-badge-icon">🥛</div>
+            <div class="tag-text">
+              <strong>特厚雲朵雪蓋</strong>
+              <small>濃郁海鹽芝士香氣</small>
+            </div>
+          </div>
 
-          <div class="dripper-status">手沖黃金參數：92°C / 1:15</div>
-          <div class="dripper-sub">澄澈透明的果香與蜂蜜尾韻</div>
+          <!-- 手搖杯 SVG 插畫 -->
+          <div class="cup-illustration">
+            <svg class="cup-svg" viewBox="0 0 160 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- 吸管 -->
+              <rect x="86" y="5" width="12" height="75" rx="6" fill="#f59e0b" transform="rotate(12 86 5)"/>
+              <!-- 杯蓋 -->
+              <rect x="15" y="42" width="130" height="14" rx="7" fill="#1f2937"/>
+              <rect x="25" y="36" width="110" height="8" rx="4" fill="#374151"/>
+              <!-- 杯身 -->
+              <path d="M22 56L34 200C34.5 206 39.5 210 45.5 210H114.5C120.5 210 125.5 206 126 200L138 56H22Z" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+              <!-- 紅茶液體 -->
+              <path d="M26 80L34 198C34.3 202 37.8 205 42 205H118C122.2 205 125.7 202 126 198L134 80H26Z" fill="#b45309" fill-opacity="0.92"/>
+              <!-- 奶蓋層 -->
+              <path d="M24 64H136L134 94C120 90 100 96 80 92C60 88 40 95 26 92L24 64Z" fill="#ffffff"/>
+              <!-- 琥珀珍珠群 -->
+              <circle cx="50" cy="186" r="8" fill="#451a03"/>
+              <circle cx="68" cy="192" r="8" fill="#78350f"/>
+              <circle cx="86" cy="188" r="8" fill="#451a03"/>
+              <circle cx="104" cy="190" r="8" fill="#78350f"/>
+              <circle cx="58" cy="172" r="7.5" fill="#78350f"/>
+              <circle cx="76" cy="175" r="8" fill="#451a03"/>
+              <circle cx="94" cy="174" r="7.5" fill="#78350f"/>
+              <!-- 品牌標籤印在杯身 -->
+              <rect x="52" y="112" width="56" height="42" rx="4" fill="#ffffff" fill-opacity="0.95"/>
+              <text x="80" y="132" font-family="'Noto Serif TC', serif" font-size="14" font-weight="900" fill="#1f2937" text-anchor="middle">阿寶</text>
+              <text x="80" y="146" font-family="sans-serif" font-size="7" font-weight="700" fill="#b45309" text-anchor="middle" letter-spacing="1">BLACK TEA</text>
+            </svg>
+          </div>
+
+          <!-- 懸浮徽章 2 -->
+          <div class="floating-card-tag tag-bottom-left">
+            <div class="tag-badge-icon">🧋</div>
+            <div class="tag-text">
+              <strong>慢熬琥珀珍珠</strong>
+              <small>Q彈爽口・甜而不膩</small>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       Brand Pillars (品牌風格: 高階咖啡豆)
-       ========================================================================== */
-  <section class="section pillars-section" id="about">
+  <!-- 促銷吸引點單 Banner (刺激顧客消費) -->
+  <section class="promo-highlight-section" id="promo">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 20px;">
-        <div class="eyebrow" style="justify-content: center;">HIGH-END COFFEE CRAFTSMANSHIP</div>
-        <h2 class="section-title">高階手沖豆的四大堅持</h2>
-        <p class="section-desc" style="margin: 0 auto;">
-          我們只專注於手沖咖啡的極致表現，從產區生豆篩選到烘焙曲線調整，每一道工序皆為純淨風味而定。
+      <div class="promo-box">
+        <div class="promo-left">
+          <h2>🎉 新客首購驚喜！全館飲品滿 $200 現折 $50</h2>
+          <p>凡於官網線上預約自取或外送，輸入下方折扣碼即可享整單現折優惠，再加贈手工茉莉茶凍一份！</p>
+          <div class="promo-coupon-code">
+            <span>折扣代碼：</span>
+            <strong>ABAOTEAFIRST</strong>
+            <button onclick="copyCoupon('ABAOTEAFIRST')" style="background: none; color: #fff; margin-left: 8px; text-decoration: underline; font-size: 0.8rem;">點擊複製</button>
+          </div>
+        </div>
+        <div class="promo-right">
+          <a href="#menu" class="btn-gold">立即使用優惠點餐</a>
+          <span style="font-size: 0.78rem; color: #9ca3af; text-align: center;">每日限量 100 組・把握機會</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 品牌風格與四大工藝堅持 -->
+  <section class="section-spacing" id="story">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">CRAFT & PHILOSOPHY</span>
+        <h2 class="section-title">一杯好手搖，從茶葉本質開始</h2>
+        <p class="section-subtitle">
+          在喧囂繁雜的日常中，「阿寶紅茶」選擇以最純淨的白色，承載最厚實的茶香。不使用茶精香料，讓回甘成為每杯飲料的底氣。
         </p>
       </div>
 
-      <div class="pillars-grid">
-        <!-- Card 1 -->
-        <div class="pillar-card">
-          <div class="pillar-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-            </svg>
-          </div>
-          <h3 class="pillar-title">全球極致微批次生豆</h3>
-          <p class="pillar-desc">
-            每季親赴或直接對接衣索比亞、巴拿馬、肯亞等名莊，只遴選生豆杯測分數 88 分以上的當季首選批次。
-          </p>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon-wrapper">🍃</div>
+          <h3>手採頂級原葉</h3>
+          <p>堅持使用台灣南投與花蓮契作茶園之手採原葉茶，絕不以茶角碎末或濃縮茶粉混充。</p>
         </div>
 
-        <!-- Card 2 -->
-        <div class="pillar-card">
-          <div class="pillar-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-            </svg>
-          </div>
-          <h3 class="pillar-title">淺中度智能曲線烘焙</h3>
-          <p class="pillar-desc">
-            不以過深烘焙掩蓋瑕疵，採用荷蘭高階烘焙機與精密氣流控制，完整保留咖啡豆天然產區花果酸甜與產地風土。
-          </p>
+        <div class="value-card">
+          <div class="value-icon-wrapper">🔥</div>
+          <h3>職人慢火厚焙</h3>
+          <p>老師傅三代傳承烘焙技術，溫潤火候徹底喚醒茶葉深層的蜜果甜香與濃郁熟成風味。</p>
         </div>
 
-        <!-- Card 3 -->
-        <div class="pillar-card">
-          <div class="pillar-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
-          </div>
-          <h3 class="pillar-title">為手沖萃取量身校準</h3>
-          <p class="pillar-desc">
-            所有批次皆附贈專屬建議沖煮參數卡（水溫、粉水比、研磨度刻度與注水節奏），讓每一位咖啡愛好者在家都能沖出店內同款絕佳風味。
-          </p>
+        <div class="value-card">
+          <div class="value-icon-wrapper">🥛</div>
+          <h3>在地小農鮮乳</h3>
+          <p>只搭配產地直送100%純鮮乳，無任何油脂添加劑，乳香與茶湯完美交融、清爽滑順。</p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon-wrapper">✨</div>
+          <h3>每日手作配料</h3>
+          <p>二砂手炒黑糖蜜珍珠、冷萃茉香茶凍，每天開店前新鮮現熬，守護每一口的彈牙鮮度。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       Coffee Menu Showcase (功能: 吸引客戶消費咖啡)
-       ========================================================================== -->
-  <section class="section menu-section" id="menu">
+  <!-- 招牌飲品菜單 (核心功能：吸引客戶消費 + 客製加料互動) -->
+  <section class="menu-section" id="menu">
     <div class="container">
-      <div class="menu-header-wrap">
+      <div class="section-header">
+        <span class="section-eyebrow">SIGNATURE DRINKS</span>
+        <h2 class="section-title">阿寶手搖精選菜單</h2>
+        <p class="section-subtitle">點擊任意飲品即可自訂冰度、甜度與加料，自由搭配專屬於您的幸福滋味！</p>
+      </div>
+
+      <!-- 分類標籤頁切換 -->
+      <div class="menu-tabs">
+        <button class="tab-btn active" onclick="filterMenu('all', this)">全部人氣飲品 (All)</button>
+        <button class="tab-btn" onclick="filterMenu('black-tea', this)">招牌紅茶系列</button>
+        <button class="tab-btn" onclick="filterMenu('milk-tea', this)">醇厚拿鐵系列</button>
+        <button class="tab-btn" onclick="filterMenu('foam', this)">雲朵奶蓋特調</button>
+        <button class="tab-btn" onclick="filterMenu('fruit', this)">鮮採果茶系列</button>
+      </div>
+
+      <!-- 飲品網格卡片 -->
+      <div class="menu-grid" id="drinksGrid">
+
+        <!-- 飲品 1 -->
+        <div class="drink-card" data-category="black-tea">
+          <div class="drink-image-box">
+            <span class="drink-badge">招牌必點 ⭐</span>
+            <svg class="drink-svg" viewBox="0 0 100 160">
+              <path d="M15 15L25 145C25 152 30 156 36 156H64C70 156 75 152 75 145L85 15H15Z" fill="#b45309"/>
+              <rect x="12" y="8" width="76" height="10" rx="5" fill="#1f2937"/>
+              <text x="50" y="90" font-family="'Noto Serif TC', serif" font-size="12" fill="#ffffff" text-anchor="middle">極上原茶</text>
+            </svg>
+            <span class="drink-sweet-level">建議：微糖少冰</span>
+          </div>
+          <div class="drink-info">
+            <div class="drink-header">
+              <h4 class="drink-name">阿寶極上紅茶</h4>
+              <span class="drink-price">$45</span>
+            </div>
+            <span class="drink-en">A-Bao Signature Black Tea</span>
+            <p class="drink-desc">品牌代表作！帶有獨特熟成蜜香與麥芽甜香，尾韻悠長回甘，不苦不澀。</p>
+            <button class="drink-order-btn" onclick="openCustomModal('阿寶極上紅茶', 45, '經典必喝原茶，微糖最能帶出深焙花果香氣。')">
+              <span>＋ 點餐調飲</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 飲品 2 -->
+        <div class="drink-card" data-category="milk-tea">
+          <div class="drink-image-box">
+            <span class="drink-badge">熱銷冠軍 🏆</span>
+            <svg class="drink-svg" viewBox="0 0 100 160">
+              <path d="M15 15L25 145C25 152 30 156 36 156H64C70 156 75 152 75 145L85 15H15Z" fill="#d97706"/>
+              <path d="M15 15L19 70C40 65 60 75 82 70L85 15H15Z" fill="#ffffff"/>
+              <circle cx="40" cy="138" r="6" fill="#451a03"/>
+              <circle cx="58" cy="142" r="6" fill="#451a03"/>
+              <circle cx="50" cy="128" r="6" fill="#451a03"/>
+              <rect x="12" y="8" width="76" height="10" rx="5" fill="#1f2937"/>
+            </svg>
+            <span class="drink-sweet-level">加珍珠超搭</span>
+          </div>
+          <div class="drink-info">
+            <div class="drink-header">
+              <h4 class="drink-name">琥珀厚乳拿鐵</h4>
+              <span class="drink-price">$65</span>
+            </div>
+            <span class="drink-en">Amber Black Tea Latte</span>
+            <p class="drink-desc">厚焙紅茶碰撞在地小農濃醇鮮乳，奶香渾厚與茶香並駕齊驅，手搖控最愛。</p>
+            <button class="drink-order-btn" onclick="openCustomModal('琥珀厚乳拿鐵', 65, '小農鮮乳加乘紅茶厚度，香氣馥郁。')">
+              <span>＋ 點餐調飲</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 飲品 3 -->
+        <div class="drink-card" data-category="foam">
+          <div class="drink-image-box">
+            <span class="drink-badge">網美最愛 ☁️</span>
+            <svg class="drink-svg" viewBox="0 0 100 160">
+              <path d="M15 15L25 145C25 152 30 156 36 156H64C70 156 75 152 75 145L85 15H15Z" fill="#92400e"/>
+              <path d="M15 15L18 55C35 50 65 60 83 55L85 15H15Z" fill="#fafafa"/>
+              <rect x="12" y="8" width="76" height="10" rx="5" fill="#1f2937"/>
+            </svg>
+            <span class="drink-sweet-level">雙重口感</span>
+          </div>
+          <div class="drink-info">
+            <div class="drink-header">
+              <h4 class="drink-name">雲朵雪蓋蜜香紅</h4>
+              <span class="drink-price">$70</span>
+            </div>
+            <span class="drink-en">Cloud Cheese Foam Tea</span>
+            <p class="drink-desc">現打海鹽芝士純白奶蓋，微鹹甜綿密奶霜覆蓋在蜜香紅茶上，層次超豐富！</p>
+            <button class="drink-order-btn" onclick="openCustomModal('雲朵雪蓋蜜香紅', 70, '厚厚一層雪白奶蓋，一口喝下雙倍幸福。')">
+              <span>＋ 點餐調飲</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 飲品 4 -->
+        <div class="drink-card" data-category="fruit">
+          <div class="drink-image-box">
+            <span class="drink-badge">消暑清爽 🍊</span>
+            <svg class="drink-svg" viewBox="0 0 100 160">
+              <path d="M15 15L25 145C25 152 30 156 36 156H64C70 156 75 152 75 145L85 15H15Z" fill="#f59e0b"/>
+              <circle cx="50" cy="80" r="14" fill="#fbbf24" stroke="#ffffff" stroke-width="2"/>
+              <rect x="12" y="8" width="76" height="10" rx="5" fill="#1f2937"/>
+            </svg>
+            <span class="drink-sweet-level">滿滿維他命C</span>
+          </div>
+          <div class="drink-info">
+            <div class="drink-header">
+              <h4 class="drink-name">香橙鮮果冰茶</h4>
+              <span class="drink-price">$65</span>
+            </div>
+            <span class="drink-en">Fresh Orange Fruit Tea</span>
+            <p class="drink-desc">整顆鮮切柳橙現榨，融合清香高山紅茶，果粒與茶韻在舌尖綻放，爽口解膩。</p>
+            <button class="drink-order-btn" onclick="openCustomModal('香橙鮮果冰茶', 65, '每日新鮮現榨柳橙汁配高山紅茶。')">
+              <span>＋ 點餐調飲</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 飲品 5 -->
+        <div class="drink-card" data-category="milk-tea">
+          <div class="drink-image-box">
+            <span class="drink-badge">珍珠控狂推 🧋</span>
+            <svg class="drink-svg" viewBox="0 0 100 160">
+              <path d="M15 15L25 145C25 152 30 156 36 156H64C70 156 75 152 75 145L85 15H15Z" fill="#d97706"/>
+              <circle cx="34" cy="140" r="7" fill="#1f2937"/>
+              <circle cx="50" cy="142" r="7" fill="#1f2937"/>
+              <circle cx="66" cy="138" r="7" fill="#1f2937"/>
+              <circle cx="42" cy="126" r="7" fill="#1f2937"/>
+              <circle cx="58" cy="126" r="7" fill="#1f2937"/>
+              <rect x="12" y="8" width="76" height="10" rx="5" fill="#1f2937"/>
+            </svg>
+            <span class="drink-sweet-level">含琥珀珍珠</span>
+          </div>
+          <div class="drink-info">
+            <div class="drink-header">
+              <h4 class="drink-name">琥珀珍珠厚黑糖奶</h4>
+              <span class="drink-price">$75</span>
+            </div>
+            <span class="drink-en">Brown Sugar Amber Pearl Milk</span>
+            <p class="drink-desc">慢火手熬台灣黑糖，琥珀色紋路掛杯，珍珠Q軟有勁，香甜不黏牙！</p>
+            <button class="drink-order-btn" onclick="openCustomModal('琥珀珍珠厚黑糖奶', 75, '黑糖香氣濃烈，搭配手炒熱珍珠。')">
+              <span>＋ 點餐調飲</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 飲品 6 -->
+        <div class="drink-card" data-category="black-tea">
+          <div class="drink-image-box">
+            <span class="drink-badge">回甘首選 🍵</span>
+            <svg class="drink-svg" viewBox="0 0 100 160">
+              <path d="M15 15L25 145C25 152 30 156 36 156H64C70 156 75 152 75 145L85 15H15Z" fill="#78350f"/>
+              <rect x="12" y="8" width="76" height="10" rx="5" fill="#1f2937"/>
+              <text x="50" y="90" font-family="'Noto Serif TC', serif" font-size="11" fill="#ffffff" text-anchor="middle">熟成炭焙</text>
+            </svg>
+            <span class="drink-sweet-level">無糖最佳</span>
+          </div>
+          <div class="drink-info">
+            <div class="drink-header">
+              <h4 class="drink-name">炭焙熟成阿寶紅</h4>
+              <span class="drink-price">$50</span>
+            </div>
+            <span class="drink-en">Roast Ceylon Aged Tea</span>
+            <p class="drink-desc">經過窖藏熟成之高階紅茶，帶有堅果與木質煙燻香氣，濃郁沉穩。</p>
+            <button class="drink-order-btn" onclick="openCustomModal('炭焙熟成阿寶紅', 50, '重焙火茶香，適合無糖品茗愛好者。')">
+              <span>＋ 點餐調飲</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 趣味互動抽獎遊戲 (吸引顧客停留與下單消費) -->
+  <section class="interactive-game-section" id="lottery">
+    <div class="container">
+      <div class="lottery-card">
+        <span class="lottery-badge">LUCKY DRAW</span>
+        <h3 style="font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 10px;">手搖控今日專屬好運！轉出你的驚喜折扣</h3>
+        <p style="color: var(--brand-gray-text); font-size: 0.95rem;">點擊下方按鈕，立即隨機獲得阿寶紅茶專屬折價券或免費加料特權！</p>
+
+        <div class="spin-box">
+          <div class="spin-result-text" id="lotteryResult">點擊下方按鈕開始抽獎 🎲</div>
+        </div>
+
         <div>
-          <div class="eyebrow">EXCLUSIVE SELECTION</div>
-          <h2 class="section-title">本季手沖高階選豆</h2>
-          <p class="section-desc">
-            四款限量單品微批次，展現從清冽柑橘白花到濃郁莓果的多層次風味譜系。
-          </p>
-        </div>
-
-        <!-- Filter Controls -->
-        <div class="filter-tabs">
-          <button class="filter-btn active" data-filter="all">全部豆款</button>
-          <button class="filter-btn" data-filter="floral">花果香調</button>
-          <button class="filter-btn" data-filter="fruity">醇厚酸甜</button>
-          <button class="filter-btn" data-filter="geisha">藝伎稀有款</button>
-        </div>
-      </div>
-
-      <!-- Bean Products Grid -->
-      <div class="beans-grid" id="beansGrid">
-        <!-- Item 1 -->
-        <article class="bean-card" data-category="floral">
-          <div class="bean-tag">熱銷推薦</div>
-          <div class="bean-visual-box">
-            <!-- Coffee Bean Graphic -->
-            <svg class="bean-avatar-svg" viewBox="0 0 100 100" fill="none">
-              <ellipse cx="50" cy="50" rx="36" ry="44" fill="#0f3d69"/>
-              <path d="M50 14 C44 32, 58 68, 50 86" stroke="#38bdf8" stroke-width="4.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="bean-body">
-            <span class="bean-origin">衣索比亞 · 潔蒂普鎮</span>
-            <h3 class="bean-name">耶加雪菲 歌迪貝 G1</h3>
-            <div class="bean-notes">
-              <span class="note-pill">茉莉白花</span>
-              <span class="note-pill">佛手柑</span>
-              <span class="note-pill">荔枝甜感</span>
-            </div>
-            <div class="bean-roast">
-              <span>極淺焙</span>
-              <div class="roast-meter">
-                <div class="roast-dot active"></div>
-                <div class="roast-dot"></div>
-                <div class="roast-dot"></div>
-                <div class="roast-dot"></div>
-              </div>
-            </div>
-            <div class="bean-footer">
-              <div class="bean-price">NT$ 520 <small>/ 200g</small></div>
-              <button class="add-cart-btn" onclick="addToCart('耶加雪菲 歌迪貝 G1', 520)">
-                <span>加入購物車</span>
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Item 2 -->
-        <article class="bean-card" data-category="geisha">
-          <div class="bean-tag" style="background:#fef3c7; color:#b45309;">頂級莊園</div>
-          <div class="bean-visual-box">
-            <svg class="bean-avatar-svg" viewBox="0 0 100 100" fill="none">
-              <ellipse cx="50" cy="50" rx="36" ry="44" fill="#091a2e"/>
-              <path d="M50 14 C44 32, 58 68, 50 86" stroke="#f59e0b" stroke-width="4.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="bean-body">
-            <span class="bean-origin">巴拿馬 · 波奎特產區</span>
-            <h3 class="bean-name">翡翠莊園 藍標藝伎</h3>
-            <div class="bean-notes">
-              <span class="note-pill">橙花花香</span>
-              <span class="note-pill">白桃</span>
-              <span class="note-pill">伯爵茶韻</span>
-            </div>
-            <div class="bean-roast">
-              <span>淺焙</span>
-              <div class="roast-meter">
-                <div class="roast-dot active"></div>
-                <div class="roast-dot active"></div>
-                <div class="roast-dot"></div>
-                <div class="roast-dot"></div>
-              </div>
-            </div>
-            <div class="bean-footer">
-              <div class="bean-price">NT$ 1,280 <small>/ 100g</small></div>
-              <button class="add-cart-btn" onclick="addToCart('翡翠莊園 藍標藝伎', 1280)">
-                <span>加入購物車</span>
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Item 3 -->
-        <article class="bean-card" data-category="fruity">
-          <div class="bean-tag">風味爆棚</div>
-          <div class="bean-visual-box">
-            <svg class="bean-avatar-svg" viewBox="0 0 100 100" fill="none">
-              <ellipse cx="50" cy="50" rx="36" ry="44" fill="#1e3a8a"/>
-              <path d="M50 14 C44 32, 58 68, 50 86" stroke="#60a5fa" stroke-width="4.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="bean-body">
-            <span class="bean-origin">肯亞 · 涅里產區</span>
-            <h3 class="bean-name">奇里尼加 AA 珍珠圓豆</h3>
-            <div class="bean-notes">
-              <span class="note-pill">黑醋栗</span>
-              <span class="note-pill">烏梅汁</span>
-              <span class="note-pill">黑糖回甘</span>
-            </div>
-            <div class="bean-roast">
-              <span>淺中焙</span>
-              <div class="roast-meter">
-                <div class="roast-dot active"></div>
-                <div class="roast-dot active"></div>
-                <div class="roast-dot active"></div>
-                <div class="roast-dot"></div>
-              </div>
-            </div>
-            <div class="bean-footer">
-              <div class="bean-price">NT$ 580 <small>/ 200g</small></div>
-              <button class="add-cart-btn" onclick="addToCart('肯亞 奇里尼加 AA', 580)">
-                <span>加入購物車</span>
-              </button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Item 4 -->
-        <article class="bean-card" data-category="fruity">
-          <div class="bean-tag">特殊發酵</div>
-          <div class="bean-visual-box">
-            <svg class="bean-avatar-svg" viewBox="0 0 100 100" fill="none">
-              <ellipse cx="50" cy="50" rx="36" ry="44" fill="#0c4a6e"/>
-              <path d="M50 14 C44 32, 58 68, 50 86" stroke="#38bdf8" stroke-width="4.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="bean-body">
-            <span class="bean-origin">哥倫比亞 · 考卡省</span>
-            <h3 class="bean-name">天堂莊園 雙重厭氧熱衝擊</h3>
-            <div class="bean-notes">
-              <span class="note-pill">草莓優格</span>
-              <span class="note-pill">百香果</span>
-              <span class="note-pill">香草莢</span>
-            </div>
-            <div class="bean-roast">
-              <span>淺焙</span>
-              <div class="roast-meter">
-                <div class="roast-dot active"></div>
-                <div class="roast-dot active"></div>
-                <div class="roast-dot"></div>
-                <div class="roast-dot"></div>
-              </div>
-            </div>
-            <div class="bean-footer">
-              <div class="bean-price">NT$ 680 <small>/ 200g</small></div>
-              <button class="add-cart-btn" onclick="addToCart('天堂莊園 雙重厭氧熱衝擊', 680)">
-                <span>加入購物車</span>
-              </button>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       Pour-Over Guide & Interactive Ratio Calculator
-       (用途: 推廣手沖咖啡)
-       ========================================================================== -->
-  <section class="section brew-section" id="brew-guide">
-    <div class="container brew-grid">
-      <!-- Left: Step-by-step Guide -->
-      <div>
-        <div class="eyebrow">BREWING RITUAL</div>
-        <h2 class="section-title" style="color: #ffffff;">藍天手沖四步法</h2>
-        <p class="section-desc" style="color: rgba(255,255,255,0.75);">
-          手沖不只是萃取咖啡，更是與香氣共度的靜心時刻。遵循以下經典步驟，輕鬆釋放豆子靈魂。
-        </p>
-
-        <div class="brew-steps-list">
-          <div class="brew-step-item">
-            <div class="step-badge">01</div>
-            <div class="step-content">
-              <h4>研磨與溫壺準備 (Grind & Rinse)</h4>
-              <p>選用中細研磨度（約二號砂糖粗細），以 92°C 軟水浸濕濾紙並溫熱分享壺，倒除溫壺水。</p>
-            </div>
-          </div>
-
-          <div class="brew-step-item">
-            <div class="step-badge">02</div>
-            <div class="step-content">
-              <h4>均勻悶蒸喚醒 (Bloom · 30秒)</h4>
-              <p>注入咖啡粉量 2 至 2.5 倍水量（約 35ml），由中心向外輕繞浸潤，靜置 30 秒等待香氣膨脹釋放。</p>
-            </div>
-          </div>
-
-          <div class="brew-step-item">
-            <div class="step-badge">03</div>
-            <div class="step-content">
-              <h4>穩定中心分段注水 (Pouring Flow)</h4>
-              <p>以細水柱繞圈注水至目標水量的 60%，待粉層水位下降一半後，進行二次注水至總目標水量。</p>
-            </div>
-          </div>
-
-          <div class="brew-step-item">
-            <div class="step-badge">04</div>
-            <div class="step-content">
-              <h4>濾乾搖勻細品 (Serve & Enjoy)</h4>
-              <p>總萃取時間控制於 2分15秒 至 2分30秒。輕輕搖勻分享壺，感受溫度從熱至涼的甘醇層次轉折。</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right: Interactive Coffee Brew Ratio Calculator -->
-      <div id="calculator">
-        <div class="calc-card">
-          <h3 class="calc-card-title">手沖黃金水粉比計算器</h3>
-          <p class="calc-card-subtitle">依據個人口感喜好，即時計算最佳注水量與參數</p>
-
-          <!-- Input: Grounds Weight -->
-          <div class="calc-field">
-            <div class="calc-label">
-              <span>咖啡粉重量</span>
-              <strong style="color: var(--sky-blue);" id="groundValDisplay">15 g</strong>
-            </div>
-            <input type="range" min="10" max="35" step="1" value="15" class="calc-slider" id="groundSlider">
-          </div>
-
-          <!-- Input: Ratio Selection -->
-          <div class="calc-field">
-            <div class="calc-label">
-              <span>水粉比例選擇</span>
-              <span style="font-size:0.8rem; color:var(--sky-blue);" id="ratioName">經典平衡 (1:15)</span>
-            </div>
-            <div class="ratio-options">
-              <button class="ratio-btn" onclick="selectRatio(14, '濃郁飽滿 (1:14)')">1 : 14 濃郁</button>
-              <button class="ratio-btn active" onclick="selectRatio(15, '經典平衡 (1:15)')">1 : 15 經典</button>
-              <button class="ratio-btn" onclick="selectRatio(16, '清透果酸 (1:16)')">1 : 16 清新</button>
-            </div>
-          </div>
-
-          <!-- Dynamic Output Results -->
-          <div class="calc-results">
-            <div class="result-box">
-              <h5>總需水量 (Total Water)</h5>
-              <p id="totalWaterDisplay">225 ml</p>
-            </div>
-            <div class="result-box">
-              <h5>悶蒸注水量 (Bloom Water)</h5>
-              <p id="bloomWaterDisplay">35 ml</p>
-            </div>
-            <div class="result-box">
-              <h5>建議水溫 (Temperature)</h5>
-              <p>91 ~ 93 °C</p>
-            </div>
-            <div class="result-box">
-              <h5>建議總時間 (Extraction)</h5>
-              <p>02'15''</p>
-            </div>
-          </div>
+          <button class="btn-primary" id="spinBtn" onclick="runLottery()" style="padding: 12px 30px;">
+            ✨ 點我試手氣抽折扣
+          </button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       Customer Reviews (目標受眾: 咖啡愛好者)
-       ========================================================================== -->
-  <section class="section reviews-section" id="reviews">
+  <!-- 顧客好評 (提升購買信任感與吸引力) -->
+  <section class="reviews-section" id="reviews">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 20px;">
-        <div class="eyebrow" style="justify-content: center;">COFFEE ENTHUSIAST FEEDBACK</div>
-        <h2 class="section-title">愛好者杯中的晴朗時刻</h2>
-        <p class="section-desc" style="margin: 0 auto;">
-          來自專業杯測師、手沖愛好者與獨立咖啡館主理人的真實品鑑分享。
-        </p>
+      <div class="section-header">
+        <span class="section-eyebrow">TESTIMONIALS</span>
+        <h2 class="section-title">手搖愛好者真心推薦</h2>
+        <p class="section-subtitle">每一份評價都是我們堅持用好茶的動力。</p>
       </div>
 
       <div class="reviews-grid">
-        <!-- Review 1 -->
         <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            「耶加雪菲的茉莉花香非常鮮活！92度沖出來酸甜平衡感極佳，放涼後喝起來像在喝頂級白桃果茶，完全打破我對咖啡酸味的刻板印象。」
-          </p>
-          <div class="reviewer-info">
-            <div class="reviewer-avatar">林</div>
-            <div>
-              <div class="reviewer-name">林宏宇</div>
-              <div class="reviewer-role">居家手沖愛好者 · 沖煮經驗 4 年</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Review 2 -->
-        <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            「藍天咖啡的翡翠莊園藍標藝伎，乾香就是滿滿的橙花與柑橘調。附贈的沖煮參數卡非常精準，照著做一次就沖出令人驚豔的伯爵茶感。」
-          </p>
+          <div class="stars">★★★★★</div>
+          <p class="review-text">「身為手搖飲重度成癮者，阿寶極上紅茶真的驚豔到我！點一分糖完全不澀，回甘的蜜果香氣超優雅，跟外面茶精茶完全不一樣！」</p>
           <div class="reviewer-info">
             <div class="reviewer-avatar">陳</div>
             <div>
-              <div class="reviewer-name">陳雅筑</div>
-              <div class="reviewer-role">SCA 國際咖啡證照烘豆師</div>
+              <div class="reviewer-name">陳小姐</div>
+              <div class="reviewer-role">台北上班族・每週必訂 3 次</div>
             </div>
           </div>
         </div>
 
-        <!-- Review 3 -->
         <div class="review-card">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">
-            「肯亞奇里尼加的黑醋栗與黑糖甜感無可挑剔！出貨日期真的都是當週新鮮現烘，咖啡豆排氣養豆後沖煮極其順暢，已加入每月固定訂閱。」
-          </p>
+          <div class="stars">★★★★★</div>
+          <p class="review-text">「白色的極簡風格在街上特別亮眼。雲朵雪蓋蜜香紅超推，海鹽奶蓋很濃郁綿密，加了手作茉莉茶凍口感層次拉滿，超幸福！」</p>
           <div class="reviewer-info">
-            <div class="reviewer-avatar">張</div>
+            <div class="reviewer-avatar">林</div>
             <div>
-              <div class="reviewer-name">張博翔</div>
-              <div class="reviewer-role">台北獨立工作室主理人</div>
+              <div class="reviewer-name">林先生</div>
+              <div class="reviewer-role">手搖飲料美食部落客</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">「琥珀珍珠厚鮮奶的珍珠超級Q彈，黑糖甜度剛剛好不會死甜。線上先點好自取完全不用排隊，服務也很親切！」</p>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">王</div>
+            <div>
+              <div class="reviewer-name">王同學</div>
+              <div class="reviewer-role">大學生手搖社社員</div>
             </div>
           </div>
         </div>
@@ -1864,317 +1843,554 @@
     </div>
   </section>
 
-  <!-- ==========================================================================
-       CTA & Subscription Section (吸引客戶消費咖啡)
-       ========================================================================== -->
-  <section class="section cta-section" id="subscribe">
-    <div class="container cta-box">
-      <div class="eyebrow" style="color: #ffffff; justify-content: center;">JOIN THE BLUE SKY CLUB</div>
-      <h2 class="cta-title">訂閱每月產地尋味，<br>享受手沖咖啡的新鮮直送</h2>
-      <p class="cta-desc">
-        每月精選兩款限量莊園級咖啡豆，享有專屬 9 折會員禮遇與沖煮指南。立即留下電子信箱，首期訂購現折 NT$ 100。
-      </p>
+  <!-- 門市資訊與外送連結 (引導消費行動) -->
+  <section class="store-section" id="store">
+    <div class="container store-grid">
+      <div>
+        <span class="section-eyebrow">VISIT OUR STORE</span>
+        <h2 class="section-title">門市資訊與線上預約</h2>
+        <p class="section-subtitle" style="margin-bottom: 24px;">歡迎親臨門市享受純白舒適的空間氛圍，或透過各大外送平台快速送達！</p>
+        
+        <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+          <a href="#menu" class="btn-primary">線上預訂自取</a>
+          <button class="btn-secondary" onclick="showToast('🛵 已開啟 UberEats 外送頁面！')">UberEats 外送</button>
+          <button class="btn-secondary" onclick="showToast('🐼 已開啟 Foodpanda 外送頁面！')">Foodpanda 外送</button>
+        </div>
+      </div>
 
-      <form class="subscribe-form" id="subscribeForm">
-        <input type="email" class="subscribe-input" placeholder="請輸入您的電子郵件地址..." required id="userEmail">
-        <button type="submit" class="subscribe-btn">領取優惠並訂閱</button>
-      </form>
+      <div class="store-details">
+        <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 16px;">阿寶紅茶 旗艦概念店</h3>
+        <ul class="store-info-list">
+          <li class="store-info-item">
+            <span class="store-icon">📍</span>
+            <div>
+              <strong>地址：</strong> 台北市大安區忠孝東路四段 88 號（近捷運忠孝復興站）
+            </div>
+          </li>
+          <li class="store-info-item">
+            <span class="store-icon">⏰</span>
+            <div>
+              <strong>營業時間：</strong> 週一至週日 10:00 - 22:00（國定假日照常營業）
+            </div>
+          </li>
+          <li class="store-info-item">
+            <span class="store-icon">📞</span>
+            <div>
+              <strong>外送專線：</strong> (02) 2771-8899
+            </div>
+          </li>
+          <li class="store-info-item">
+            <span class="store-icon">🍵</span>
+            <div>
+              <strong>外送服務：</strong> 滿 $300 享有 3 公里內免費外送服務
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       Shopping Cart Drawer
-       ========================================================================== -->
-  <div class="cart-drawer-overlay" id="cartOverlay"></div>
-  <aside class="cart-drawer" id="cartDrawer" aria-label="購物車抽屜">
-    <div class="cart-drawer-header">
-      <h3>我的品味清單 (<span id="drawerCount">0</span>)</h3>
-      <button class="close-drawer-btn" id="closeCartBtn">&times;</button>
-    </div>
-
-    <div class="cart-drawer-items" id="cartItemsContainer">
-      <!-- Empty State -->
-      <p style="text-align:center; color:#94a3b8; margin-top:40px;">目前購物車內尚無咖啡豆。<br>快去挑選您喜愛的手沖產區吧！</p>
-    </div>
-
-    <div class="cart-drawer-footer">
-      <div class="cart-total-row">
-        <span>結帳總額</span>
-        <span id="cartTotal">NT$ 0</span>
-      </div>
-      <button class="checkout-btn" onclick="checkoutAction()">前往結帳確認</button>
-    </div>
-  </aside>
-
-  <!-- Floating Toast Notification -->
-  <div class="toast-msg" id="toastMsg">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5">
-      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-      <polyline points="22 4 12 14.01 9 11.01"></polyline>
-    </svg>
-    <span id="toastText">已成功加入購物車！</span>
-  </div>
-
-  <!-- ==========================================================================
-       Footer
-       ========================================================================== -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <!-- Column 1: Brand Info -->
-      <div class="footer-brand">
-        <div class="brand-logo" style="margin-bottom: 12px;">
-          <div class="brand-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2">
-              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
-              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
-            </svg>
+  <!-- 頁尾 Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 16px;">
+            <div class="logo-icon" style="background:#fff; border-color:#fff;">寶</div>
+            <div class="logo-text">
+              <h3 style="color:#fff; font-family: var(--font-serif); font-size: 1.3rem;">阿寶紅茶</h3>
+              <span style="color:#9ca3af;">A-BAO BLACK TEA</span>
+            </div>
           </div>
-          <div class="brand-text">
-            <h2 style="font-size: 1.15rem; font-family: var(--font-serif); color:#fff;">藍天咖啡</h2>
-            <span>BLUE SKY COFFEE</span>
+          <p style="line-height: 1.6; font-size: 0.88rem;">
+            專注於手搖茶本質的純白品牌。以極簡白色盛裝深厚茶韻，陪伴每個需要一杯好茶的悠然時刻。
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>探索好茶</h4>
+          <ul>
+            <li><a href="#menu">招牌極上紅茶</a></li>
+            <li><a href="#menu">厚乳拿鐵系列</a></li>
+            <li><a href="#menu">雲朵芝士奶蓋</a></li>
+            <li><a href="#menu">鮮採當季果茶</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>會員與優惠</h4>
+          <ul>
+            <li><a href="#promo">本月新客優惠</a></li>
+            <li><a href="#lottery">天天幸運抽獎</a></li>
+            <li><a href="#store">企業大宗團購</a></li>
+            <li><a href="#store">加盟諮詢服務</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>訂閱手搖最新情報</h4>
+          <p style="margin-bottom: 12px; font-size: 0.85rem;">訂閱電子報，第一時間取得新品試喝與買一送一活動通知！</p>
+          <div style="display: flex; gap: 8px;">
+            <input type="email" id="newsletterEmail" placeholder="請輸入您的信箱" style="padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid #374151; background: #1f2937; color: #fff; flex: 1; outline: none;">
+            <button onclick="subscribeNewsletter()" class="btn-primary" style="padding: 10px 16px;">訂閱</button>
           </div>
         </div>
-        <p>
-          藍天咖啡專注於推廣純粹的手沖咖啡工藝。我們相信，好的咖啡如清晨晴空般清澈透明，值得每一位咖啡愛好者細細品嚐。
-        </p>
       </div>
 
-      <!-- Column 2: Quick Links -->
-      <div>
-        <h4 class="footer-title">快速導覽</h4>
-        <ul class="footer-links">
-          <li><a href="#about">品牌堅持</a></li>
-          <li><a href="#menu">本季高階豆單</a></li>
-          <li><a href="#brew-guide">手沖四步法</a></li>
-          <li><a href="#calculator">水粉比計算工具</a></li>
-          <li><a href="#reviews">顧客真實盛讚</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <p>© 2026 阿寶紅茶 A-Bao Black Tea. All Rights Reserved. 網頁規格作業實作.</p>
+        <p>食品業者登錄字號：A-11425229-00000-1 ｜ 堅持誠實標示茶葉產地</p>
       </div>
-
-      <!-- Column 3: Coffee Knowledge -->
-      <div>
-        <h4 class="footer-title">手沖學堂</h4>
-        <ul class="footer-links">
-          <li><a href="#brew-guide">淺焙花果香沖煮溫控</a></li>
-          <li><a href="#brew-guide">V60 濾杯流速解析</a></li>
-          <li><a href="#brew-guide">咖啡豆新鮮養豆法</a></li>
-          <li><a href="#calculator">水質與萃取率關聯</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 4: Contact & Location -->
-      <div>
-        <h4 class="footer-title">聯絡與門市體驗</h4>
-        <div class="footer-contact-item">
-          <span>📍</span>
-          <span>台北市大安區晴空路一段 88 號（手沖體驗旗艦店）</span>
-        </div>
-        <div class="footer-contact-item">
-          <span>📞</span>
-          <span>(02) 2788-9900</span>
-        </div>
-        <div class="footer-contact-item">
-          <span>✉️</span>
-          <span>service@blueskycoffee.tw</span>
-        </div>
-        <div class="footer-contact-item">
-          <span>⏰</span>
-          <span>週一至週日 09:30 - 18:30</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bottom Bar -->
-    <div class="container footer-bottom">
-      <p>© 2026 藍天咖啡 BLUE SKY COFFEE CO., LTD. 版權所有 · 專為手沖愛好者打造</p>
-      <p>網站規格遵循：高階咖啡豆 · 品牌藍色調 · 推廣手沖咖啡 · 促進消費體驗</p>
     </div>
   </footer>
 
-  <!-- ==========================================================================
-       JavaScript Logic
-       ========================================================================== -->
+  <!-- 點餐客製化對話框 (Modal Customizer) -->
+  <div class="modal-overlay" id="customModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div>
+          <h3 id="modalDrinkTitle">阿寶極上紅茶</h3>
+          <p id="modalDrinkDesc" style="font-size: 0.82rem; color: #6b7280; margin-top: 4px;"></p>
+        </div>
+        <button class="close-modal-btn" onclick="closeCustomModal()">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- 容量規格 -->
+        <div class="custom-group">
+          <div class="custom-label">
+            <span>選擇容量 (Size)</span>
+            <small>必選</small>
+          </div>
+          <div class="option-grid">
+            <label>
+              <input type="radio" name="size" value="大杯 L" data-add="0" class="option-radio" checked onchange="calcModalPrice()">
+              <div class="option-pill">大杯 L (660ml)</div>
+            </label>
+            <label>
+              <input type="radio" name="size" value="中杯 M" data-add="-5" class="option-radio" onchange="calcModalPrice()">
+              <div class="option-pill">中杯 M (-$5)</div>
+            </label>
+            <label>
+              <input type="radio" name="size" value="分享瓶 XL" data-add="25" class="option-radio" onchange="calcModalPrice()">
+              <div class="option-pill">分享瓶 (+$25)</div>
+            </label>
+          </div>
+        </div>
+
+        <!-- 甜度選擇 -->
+        <div class="custom-group">
+          <div class="custom-label">
+            <span>甜度選擇 (Sweetness)</span>
+            <small>必選</small>
+          </div>
+          <div class="option-grid">
+            <label>
+              <input type="radio" name="sweetness" value="微糖 30%" class="option-radio" checked>
+              <div class="option-pill">微糖 (30%)</div>
+            </label>
+            <label>
+              <input type="radio" name="sweetness" value="半糖 50%" class="option-radio">
+              <div class="option-pill">半糖 (50%)</div>
+            </label>
+            <label>
+              <input type="radio" name="sweetness" value="無糖 0%" class="option-radio">
+              <div class="option-pill">無糖 (0%)</div>
+            </label>
+            <label>
+              <input type="radio" name="sweetness" value="少糖 70%" class="option-radio">
+              <div class="option-pill">少糖 (70%)</div>
+            </label>
+            <label>
+              <input type="radio" name="sweetness" value="正常糖 100%" class="option-radio">
+              <div class="option-pill">正常糖 (100%)</div>
+            </label>
+          </div>
+        </div>
+
+        <!-- 冰塊溫度 -->
+        <div class="custom-group">
+          <div class="custom-label">
+            <span>冰量溫度 (Ice Level)</span>
+            <small>必選</small>
+          </div>
+          <div class="option-grid">
+            <label>
+              <input type="radio" name="ice" value="微冰" class="option-radio" checked>
+              <div class="option-pill">微冰</div>
+            </label>
+            <label>
+              <input type="radio" name="ice" value="少冰" class="option-radio">
+              <div class="option-pill">少冰</div>
+            </label>
+            <label>
+              <input type="radio" name="ice" value="去冰" class="option-radio">
+              <div class="option-pill">去冰</div>
+            </label>
+            <label>
+              <input type="radio" name="ice" value="正常冰" class="option-radio">
+              <div class="option-pill">正常冰</div>
+            </label>
+            <label>
+              <input type="radio" name="ice" value="溫熱飲" class="option-radio">
+              <div class="option-pill">溫熱飲</div>
+            </label>
+          </div>
+        </div>
+
+        <!-- 加料推薦 (自由複選) -->
+        <div class="custom-group">
+          <div class="custom-label">
+            <span>手工配料 (Toppings)</span>
+            <small>可複選</small>
+          </div>
+
+          <div class="topping-item" onclick="toggleTopping(this, '手炒琥珀珍珠', 10)">
+            <div class="topping-info">
+              <span>🧋 手炒琥珀珍珠</span>
+            </div>
+            <span class="topping-price">+ $10</span>
+          </div>
+
+          <div class="topping-item" onclick="toggleTopping(this, '茉香綠茶凍', 10)">
+            <div class="topping-info">
+              <span>🍃 茉香綠茶凍</span>
+            </div>
+            <span class="topping-price">+ $10</span>
+          </div>
+
+          <div class="topping-item" onclick="toggleTopping(this, '濃醇雲朵奶蓋', 15)">
+            <div class="topping-info">
+              <span>☁️ 濃醇海鹽奶蓋</span>
+            </div>
+            <span class="topping-price">+ $15</span>
+          </div>
+
+          <div class="topping-item" onclick="toggleTopping(this, '手工古早味布丁', 15)">
+            <div class="topping-info">
+              <span>🍮 手工古早味布丁</span>
+            </div>
+            <span class="topping-price">+ $15</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div>
+          <span style="font-size: 0.82rem; color: #6b7280; display: block;">總計金額</span>
+          <span class="modal-total-price" id="modalFinalPrice">$45</span>
+        </div>
+        <button class="btn-primary" onclick="confirmAddToCart()">
+          🛒 加入點餐清單
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 側邊購物車抽屜 (Cart Drawer) -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="toggleCartDrawer()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3 style="font-family: var(--font-serif); font-size: 1.25rem;">您的點餐清單</h3>
+      <button class="close-modal-btn" onclick="toggleCartDrawer()">✕</button>
+    </div>
+
+    <div class="cart-drawer-items" id="cartItemsContainer">
+      <!-- 購物車商品由 JavaScript 動態渲染 -->
+      <div class="cart-empty-state">
+        <div class="cart-empty-icon">🥤</div>
+        <p>您的點餐清單還是空的喔！</p>
+        <p style="font-size: 0.8rem; margin-top: 4px;">快去菜單挑選喜愛的茶品吧！</p>
+      </div>
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-row">
+        <span>小計</span>
+        <span id="cartSubtotal">$0</span>
+      </div>
+      <div class="cart-summary-row">
+        <span>新客折扣</span>
+        <span style="color: var(--success);" id="cartDiscount">-$0</span>
+      </div>
+      <div class="cart-summary-row cart-summary-total">
+        <span>應付總額</span>
+        <span style="color: var(--tea-amber-dark);" id="cartTotal">$0</span>
+      </div>
+
+      <button class="btn-gold" style="width: 100%; margin-top: 14px;" onclick="checkoutOrder()">
+        確認送出點單（線上預約）
+      </button>
+    </div>
+  </div>
+
+  <!-- 浮動提示 Toast -->
+  <div class="toast-msg" id="toastMsg">
+    <span id="toastIcon">✨</span>
+    <span id="toastText">訊息已更新！</span>
+  </div>
+
+  <!-- --------------------------------------------------
+       JavaScript 核心互動邏輯
+  -------------------------------------------------- -->
   <script>
-    // 1. Mobile Menu Toggle
-    const mobileToggle = document.getElementById('mobileToggle');
-    const navMenu = document.getElementById('navMenu');
+    // 購物車數據狀態
+    let cart = [];
+    let currentDrink = {
+      name: '',
+      basePrice: 0,
+      desc: ''
+    };
+    let selectedToppings = [];
 
-    mobileToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-      mobileToggle.textContent = navMenu.classList.contains('open') ? '✕' : '☰';
-    });
+    // 菜單分類篩選
+    function filterMenu(category, btnElement) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      btnElement.classList.add('active');
 
-    // Close mobile nav when clicking any nav link
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        mobileToggle.textContent = '☰';
-      });
-    });
-
-    // 2. Coffee Menu Filter Tabs
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const beanCards = document.querySelectorAll('.bean-card');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.dataset.filter;
-        beanCards.forEach(card => {
-          if (filter === 'all' || card.dataset.category === filter) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-
-    // 3. Interactive Brew Calculator
-    const groundSlider = document.getElementById('groundSlider');
-    const groundValDisplay = document.getElementById('groundValDisplay');
-    const totalWaterDisplay = document.getElementById('totalWaterDisplay');
-    const bloomWaterDisplay = document.getElementById('bloomWaterDisplay');
-    const ratioName = document.getElementById('ratioName');
-    let currentRatio = 15;
-
-    function updateCalculator() {
-      const grounds = parseInt(groundSlider.value, 10);
-      groundValDisplay.textContent = grounds + ' g';
-      const totalWater = grounds * currentRatio;
-      const bloomWater = Math.round(grounds * 2.3);
-      totalWaterDisplay.textContent = totalWater + ' ml';
-      bloomWaterDisplay.textContent = bloomWater + ' ml';
-    }
-
-    function selectRatio(ratio, name) {
-      currentRatio = ratio;
-      ratioName.textContent = name;
-      document.querySelectorAll('.ratio-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.textContent.includes(`1 : ${ratio}`)) {
-          btn.classList.add('active');
+      const cards = document.querySelectorAll('.drink-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
         }
       });
-      updateCalculator();
     }
 
-    groundSlider.addEventListener('input', updateCalculator);
+    // 開啟客製調飲視窗
+    function openCustomModal(name, price, desc) {
+      currentDrink = { name, basePrice: price, desc };
+      document.getElementById('modalDrinkTitle').textContent = name;
+      document.getElementById('modalDrinkDesc').textContent = desc;
+      
+      // 重置加料與選項
+      selectedToppings = [];
+      document.querySelectorAll('.topping-item').forEach(el => el.classList.remove('selected'));
+      
+      // 預設選中微糖微冰大杯
+      document.querySelector('input[name="size"][value="大杯 L"]').checked = true;
+      document.querySelector('input[name="sweetness"][value="微糖 30%"]').checked = true;
+      document.querySelector('input[name="ice"][value="微冰"]').checked = true;
 
-    // 4. Shopping Cart System (吸引客戶消費咖啡)
-    const cart = [];
-    const cartCountEl = document.getElementById('cartCount');
-    const drawerCountEl = document.getElementById('drawerCount');
-    const cartItemsContainer = document.getElementById('cartItemsContainer');
-    const cartTotalEl = document.getElementById('cartTotal');
-    const cartOverlay = document.getElementById('cartOverlay');
-    const cartDrawer = document.getElementById('cartDrawer');
-    const openCartBtn = document.getElementById('openCartBtn');
-    const closeCartBtn = document.getElementById('closeCartBtn');
-    const toastMsg = document.getElementById('toastMsg');
-    const toastText = document.getElementById('toastText');
-    let toastTimer;
-
-    function showToast(text) {
-      toastText.textContent = text;
-      toastMsg.classList.add('show');
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => {
-        toastMsg.classList.remove('show');
-      }, 3000);
+      calcModalPrice();
+      document.getElementById('customModal').classList.add('active');
     }
 
-    function openCart() {
-      cartOverlay.classList.add('active');
-      cartDrawer.classList.add('active');
+    // 關閉視窗
+    function closeCustomModal() {
+      document.getElementById('customModal').classList.remove('active');
     }
 
-    function closeCart() {
-      cartOverlay.classList.remove('active');
-      cartDrawer.classList.remove('active');
+    // 點擊加料切換
+    function toggleTopping(el, toppingName, toppingPrice) {
+      const idx = selectedToppings.findIndex(t => t.name === toppingName);
+      if (idx > -1) {
+        selectedToppings.splice(idx, 1);
+        el.classList.remove('selected');
+      } else {
+        selectedToppings.push({ name: toppingName, price: toppingPrice });
+        el.classList.add('selected');
+      }
+      calcModalPrice();
     }
 
-    openCartBtn.addEventListener('click', openCart);
-    closeCartBtn.addEventListener('click', closeCart);
-    cartOverlay.addEventListener('click', closeCart);
+    // 計算當前對話框價格
+    function calcModalPrice() {
+      const sizeRadio = document.querySelector('input[name="size"]:checked');
+      const sizeDiff = parseInt(sizeRadio.getAttribute('data-add') || '0', 10);
+      const toppingsTotal = selectedToppings.reduce((sum, item) => sum + item.price, 0);
+      const finalPrice = Math.max(0, currentDrink.basePrice + sizeDiff + toppingsTotal);
+      
+      document.getElementById('modalFinalPrice').textContent = '$' + finalPrice;
+      return finalPrice;
+    }
 
+    // 確認加入購物車
+    function confirmAddToCart() {
+      const size = document.querySelector('input[name="size"]:checked').value;
+      const sweetness = document.querySelector('input[name="sweetness"]:checked').value;
+      const ice = document.querySelector('input[name="ice"]:checked').value;
+      const finalPrice = calcModalPrice();
+      const toppingsCopy = [...selectedToppings];
+
+      const item = {
+        id: Date.now(),
+        name: currentDrink.name,
+        price: finalPrice,
+        size,
+        sweetness,
+        ice,
+        toppings: toppingsCopy,
+        quantity: 1
+      };
+
+      cart.push(item);
+      updateCartUI();
+      closeCustomModal();
+      showToast(`已將「${item.name}」加入點餐清單！`);
+    }
+
+    // 更新購物車顯示
     function updateCartUI() {
-      const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
-      cartCountEl.textContent = totalCount;
-      drawerCountEl.textContent = totalCount;
+      const container = document.getElementById('cartItemsContainer');
+      const badge = document.getElementById('cartBadgeCount');
+      const subtotalEl = document.getElementById('cartSubtotal');
+      const totalEl = document.getElementById('cartTotal');
+      
+      const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+      badge.textContent = totalCount;
 
       if (cart.length === 0) {
-        cartItemsContainer.innerHTML = '<p style="text-align:center; color:#94a3b8; margin-top:40px;">目前購物車內尚無咖啡豆。<br>快去挑選您喜愛的手沖產區吧！</p>';
-        cartTotalEl.textContent = 'NT$ 0';
+        container.innerHTML = `
+          <div class="cart-empty-state">
+            <div class="cart-empty-icon">🥤</div>
+            <p>您的點餐清單還是空的喔！</p>
+            <p style="font-size: 0.8rem; margin-top: 4px;">快去菜單挑選喜愛的茶品吧！</p>
+          </div>
+        `;
+        subtotalEl.textContent = '$0';
+        totalEl.textContent = '$0';
         return;
       }
 
-      let totalAmount = 0;
+      let subtotal = 0;
       let html = '';
 
       cart.forEach((item, index) => {
-        const itemSubtotal = item.price * item.qty;
-        totalAmount += itemSubtotal;
+        const itemSubtotal = item.price * item.quantity;
+        subtotal += itemSubtotal;
+        const toppingText = item.toppings.length > 0 
+          ? `加料：${item.toppings.map(t => t.name).join('、')}` 
+          : '無額外加料';
+
         html += `
-          <div class="cart-item">
-            <div class="cart-item-info">
-              <h4>${item.name}</h4>
-              <p>NT$ ${item.price} × ${item.qty}</p>
+          <div class="cart-item-card">
+            <div class="cart-item-header">
+              <span>${item.name} (${item.size})</span>
+              <button onclick="removeCartItem(${index})" style="background:none; color:#ef4444; font-size:0.8rem;">刪除</button>
             </div>
-            <div style="display:flex; align-items:center; gap:12px;">
-              <span class="cart-item-price">NT$ ${itemSubtotal}</span>
-              <button onclick="removeFromCart(${index})" style="background:none; color:#ef4444; font-size:1.1rem; padding:4px;" title="刪除品項">✕</button>
+            <div class="cart-item-details">
+              <span>${item.sweetness} / ${item.ice}</span><br>
+              <span style="color: #92400e;">${toppingText}</span>
+            </div>
+            <div class="cart-item-actions">
+              <div class="qty-controls">
+                <button class="qty-btn" onclick="changeQty(${index}, -1)">-</button>
+                <span style="font-size: 0.9rem; font-weight: 700;">${item.quantity}</span>
+                <button class="qty-btn" onclick="changeQty(${index}, 1)">+</button>
+              </div>
+              <span class="cart-item-price">$${itemSubtotal}</span>
             </div>
           </div>
         `;
       });
 
-      cartItemsContainer.innerHTML = html;
-      cartTotalEl.textContent = 'NT$ ' + totalAmount.toLocaleString();
+      container.innerHTML = html;
+      subtotalEl.textContent = '$' + subtotal;
+      totalEl.textContent = '$' + subtotal;
     }
 
-    function addToCart(name, price) {
-      const existing = cart.find(item => item.name === name);
-      if (existing) {
-        existing.qty += 1;
-      } else {
-        cart.push({ name, price, qty: 1 });
+    // 調整商品數量
+    function changeQty(index, delta) {
+      if (cart[index]) {
+        cart[index].quantity += delta;
+        if (cart[index].quantity <= 0) {
+          cart.splice(index, 1);
+        }
+        updateCartUI();
       }
-      updateCartUI();
-      showToast(`已將「${name}」加入購物車！`);
     }
 
-    function removeFromCart(index) {
-      const removed = cart.splice(index, 1);
+    // 刪除品項
+    function removeCartItem(index) {
+      cart.splice(index, 1);
       updateCartUI();
-      showToast(`已將「${removed[0].name}」移出購物車`);
+      showToast('已自清單中移除品項');
     }
 
-    function checkoutAction() {
+    // 切換購物車抽屜
+    function toggleCartDrawer() {
+      const drawer = document.getElementById('cartDrawer');
+      const overlay = document.getElementById('cartOverlay');
+      drawer.classList.toggle('active');
+      overlay.classList.toggle('active');
+    }
+
+    // 模擬結帳送單
+    function checkoutOrder() {
       if (cart.length === 0) {
-        alert('購物車是空的，請先挑選喜歡的咖啡豆！');
+        showToast('請先加入飲品再進行點單結帳喔！');
         return;
       }
-      alert('感謝您支持藍天咖啡！系統已為您確認訂單，我們將在 48 小時內新鮮現烘並為您安排宅配寄出。');
-      cart.length = 0;
+      const totalAmount = document.getElementById('cartTotal').textContent;
+      alert(`🎉 感謝您的訂購！\n訂單已成立，總金額為 ${totalAmount}。\n我們已開始為您鮮淬茶飲，預計 15 分鐘後即可至門市自取！`);
+      cart = [];
       updateCartUI();
-      closeCart();
+      toggleCartDrawer();
     }
 
-    // 5. Subscription Form
-    document.getElementById('subscribeForm').addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = document.getElementById('userEmail').value;
-      if (email) {
-        showToast('感謝訂閱！首期折扣碼【BLUESKY100】已發送至您的信箱。');
-        document.getElementById('userEmail').value = '';
-      }
-    });
+    // 趣味轉盤抽獎 (吸引顧客下單)
+    const prizes = [
+      '🎉 恭喜抽中：全單 85 折優惠券！',
+      '🧋 恭喜抽中：免費招待「手工琥珀珍珠」一份！',
+      '🥛 恭喜抽中：免費升級「濃醇雪蓋奶蓋」！',
+      '🔥 恭喜抽中：第二杯半價優惠序號！',
+      '✨ 恭喜抽中：滿百現折 $20 元現金抵用券！'
+    ];
 
-    // Initialize values
-    updateCalculator();
+    function runLottery() {
+      const btn = document.getElementById('spinBtn');
+      const res = document.getElementById('lotteryResult');
+      btn.disabled = true;
+      res.textContent = '✨ 攪拌茶湯抽獎中...';
+
+      let count = 0;
+      const interval = setInterval(() => {
+        res.textContent = prizes[Math.floor(Math.random() * prizes.length)];
+        count++;
+        if (count > 8) {
+          clearInterval(interval);
+          const finalPrize = prizes[Math.floor(Math.random() * prizes.length)];
+          res.textContent = finalPrize;
+          btn.disabled = false;
+          showToast('折扣已綁定！結帳自動折抵！');
+        }
+      }, 100);
+    }
+
+    // 複製折扣代碼
+    function copyCoupon(code) {
+      navigator.clipboard.writeText(code).then(() => {
+        showToast(`已成功複製折扣代碼：${code}`);
+      }).catch(() => {
+        showToast(`折扣代碼：${code}`);
+      });
+    }
+
+    // 訂閱電子報
+    function subscribeNewsletter() {
+      const email = document.getElementById('newsletterEmail').value;
+      if (!email || !email.includes('@')) {
+        showToast('請輸入有效的電子郵件地址');
+        return;
+      }
+      showToast('🎉 感謝訂閱！首杯半價優惠代碼已寄至您的信箱。');
+      document.getElementById('newsletterEmail').value = '';
+    }
+
+    // 顯示浮動 Toast
+    let toastTimeout;
+    function showToast(msg) {
+      const toast = document.getElementById('toastMsg');
+      document.getElementById('toastText').textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2600);
+    }
   </script>
 </body>
 </html>
+
